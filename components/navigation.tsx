@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button"
 import { AnimatedButton } from "@/components/animated-button"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,6 +29,12 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("/")
   const pathname = usePathname()
   const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true)
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
+
+  if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
   useEffect(() => {
     const handleScroll = () => {

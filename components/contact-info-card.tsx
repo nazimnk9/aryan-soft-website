@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion"
 import type { LucideIcon } from "lucide-react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 interface ContactInfoCardProps {
   icon: LucideIcon

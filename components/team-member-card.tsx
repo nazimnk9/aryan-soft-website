@@ -6,7 +6,12 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { motion } from "framer-motion"
 import { Linkedin, Twitter, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 interface TeamMemberCardProps {
   name: string
   role: string

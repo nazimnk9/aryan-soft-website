@@ -4,6 +4,12 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Float, Stars } from "@react-three/drei"
 import { useRef } from "react"
 import type { Mesh } from "three"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 function AnimatedSphere() {
   const meshRef = useRef<Mesh>(null)

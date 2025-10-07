@@ -5,7 +5,12 @@ import { CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { SectionHeading } from "@/components/section-heading"
 import { Star } from "lucide-react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 const testimonials = [
   {
     name: "Sarah Johnson",

@@ -5,6 +5,12 @@ import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { type ButtonHTMLAttributes, forwardRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 interface AnimatedButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost" | "secondary"

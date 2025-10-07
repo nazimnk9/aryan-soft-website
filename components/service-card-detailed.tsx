@@ -7,7 +7,12 @@ import { AnimatedButton } from "@/components/animated-button"
 import { motion } from "framer-motion"
 import type { LucideIcon } from "lucide-react"
 import Link from "next/link"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 interface ServiceCardDetailedProps {
   icon: LucideIcon
   title: string
