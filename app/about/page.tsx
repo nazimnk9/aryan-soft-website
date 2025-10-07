@@ -1,11 +1,6 @@
 import type { Metadata } from "next"
 import { AboutPageClient } from "./about-page-client"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 export const metadata: Metadata = {
   title: "About Us - Aryan Soft | Our Story, Mission & Team",
   description:

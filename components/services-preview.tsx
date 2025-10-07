@@ -6,12 +6,7 @@ import { Code, Smartphone, Cloud, Database, Palette, Shield } from "lucide-react
 import { SectionHeading } from "@/components/section-heading"
 import { AnimatedButton } from "@/components/animated-button"
 import Link from "next/link"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 const services = [
   {
     icon: Code,

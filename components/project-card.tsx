@@ -7,12 +7,7 @@ import { AnimatedButton } from "@/components/animated-button"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 interface ProjectCardProps {
   title: string
   description: string

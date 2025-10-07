@@ -4,12 +4,6 @@ import type React from "react"
 
 import { AnimatedButton } from "@/components/animated-button"
 import { motion } from "framer-motion"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 export function CTASection() {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

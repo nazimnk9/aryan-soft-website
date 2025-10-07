@@ -5,12 +5,6 @@ import { SectionHeading } from "@/components/section-heading"
 import { AnimatedButton } from "@/components/animated-button"
 import { Target, Users, Lightbulb, Award } from "lucide-react"
 import Link from "next/link"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 const values = [
   {

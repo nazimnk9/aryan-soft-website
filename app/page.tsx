@@ -11,12 +11,7 @@ import { CTASection } from "@/components/cta-section"
 import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 export const metadata: Metadata = {
   title: "Aryan Soft - Innovative Software Solutions | Home",
   description:
