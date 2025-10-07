@@ -2,7 +2,12 @@ import { SectionHeading } from "@/components/section-heading"
 import { ParticleBackground } from "@/components/particle-background"
 import type { Metadata } from "next"
 import { ContactPageClient } from "./contact-page-client"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 export const metadata: Metadata = {
   title: "Contact Us - Aryan Soft | Get in Touch for Software Solutions",
   description:

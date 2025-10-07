@@ -3,17 +3,17 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
 
   useEffect(() => {
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
+
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
@@ -38,12 +38,12 @@ export function LoadingScreen() {
                 key={i}
                 className="absolute w-2 h-2 bg-white/40 rounded-full"
                 initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
+                  x: Math.random() * dimensions.width,
+                  y: Math.random() * dimensions.height,
                   scale: 0,
                 }}
                 animate={{
-                  y: [null, Math.random() * window.innerHeight],
+                  y: [null, Math.random() * dimensions.height],
                   scale: [0, 1, 0],
                   opacity: [0, 1, 0],
                 }}

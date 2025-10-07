@@ -7,7 +7,12 @@ import { SectionHeading } from "@/components/section-heading"
 import { ParticleBackground } from "@/components/particle-background"
 import { CTASection } from "@/components/cta-section"
 import { motion, AnimatePresence } from "framer-motion"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 const projects = [
   {
     title: "E-Commerce Platform",
