@@ -6,9 +6,12 @@ import Image from "next/image"
 
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [mounted, setMounted] = useState(false)
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
 
   useEffect(() => {
+    setMounted(true)
+
     setDimensions({
       width: window.innerWidth,
       height: window.innerHeight,
@@ -33,27 +36,28 @@ export function LoadingScreen() {
         >
           {/* Animated background particles */}
           <div className="absolute inset-0 overflow-hidden">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-white/40 rounded-full"
-                initial={{
-                  x: Math.random() * dimensions.width,
-                  y: Math.random() * dimensions.height,
-                  scale: 0,
-                }}
-                animate={{
-                  y: [null, Math.random() * dimensions.height],
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2 + Math.random() * 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
+            {mounted &&
+              [...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-white/40 rounded-full"
+                  initial={{
+                    x: Math.random() * dimensions.width,
+                    y: Math.random() * dimensions.height,
+                    scale: 0,
+                  }}
+                  animate={{
+                    y: [null, Math.random() * dimensions.height],
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2 + Math.random() * 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
           </div>
 
           {/* Main content */}
@@ -125,4 +129,5 @@ export function LoadingScreen() {
     </AnimatePresence>
   )
 }
+
 
