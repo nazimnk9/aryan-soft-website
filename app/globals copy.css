@@ -263,23 +263,9 @@
     }
   }
 
-  @keyframes gradient-x {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .bg-\[length\:200\%_auto\] {
-    background-size: 200% auto;
-  }
-
   .animate-gradient {
     background-size: 200% 200%;
-    animation: gradient-x 3s ease infinite;
+    animation: gradient-shift 8s ease infinite;
   }
 
   @keyframes slide-up {
@@ -357,19 +343,6 @@
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 229, 255, 0.3);
-  }
-
-  /* Added glass-dark variant for hero feature cards */
-  .glass-dark {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .dark .glass-dark {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Enhanced gradient text with better visibility */
