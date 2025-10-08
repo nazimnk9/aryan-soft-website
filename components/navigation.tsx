@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
   { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#stack", label: "Stack" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ]
@@ -33,7 +34,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 20)
 
       if (pathname === "/") {
-        const sections = ["services", "portfolio", "about", "contact"]
+        const sections = ["services", "portfolio","stack", "about", "contact",]
         const scrollPosition = window.scrollY + 100
 
         for (const section of sections) {
