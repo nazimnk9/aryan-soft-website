@@ -109,13 +109,18 @@ export function AboutPageClient() {
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0 }}
+        className="relative py-20 md:py-32"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center mb-8"
             >
               <div className="relative w-32 h-32 animate-float-slow">
@@ -129,53 +134,70 @@ export function AboutPageClient() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Story Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass rounded-3xl p-8 md:p-12 space-y-6"
-            >
+            <div className="glass rounded-3xl p-8 md:p-12 space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold gradient-text">Our Story</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+              <p className="text-lg text-white text-muted-foreground leading-relaxed text-pretty">
                 Founded in 2010, Aryan Soft began with a simple mission: to help businesses leverage technology to
                 achieve their goals. What started as a small team of passionate developers has grown into a full-service
                 software development company serving clients worldwide.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+              <p className="text-lg text-white text-muted-foreground leading-relaxed text-pretty">
                 Over the years, we've completed 500+ projects across various industries, from startups to Fortune 500
                 companies. Our commitment to excellence, innovation, and client satisfaction has made us a trusted
                 partner for digital transformation.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
+              <p className="text-lg text-white text-muted-foreground leading-relaxed text-pretty">
                 Today, we continue to push the boundaries of what's possible with technology, helping our clients stay
                 ahead in an ever-evolving digital landscape.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Values Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Values" subtitle="The principles that guide everything we do" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {values.map((value, index) => (
-              <ValueCard key={value.title} {...value} delay={index * 0.05} />
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 + index * 0.08 }}
+              >
+                <ValueCard {...value} delay={0} />
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Team Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.7 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Meet Our Team"
@@ -184,14 +206,26 @@ export function AboutPageClient() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
             {teamMembers.map((member, index) => (
-              <TeamMemberCard key={member.name} {...member} delay={index * 0.05} />
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.9 + index * 0.08 }}
+              >
+                <TeamMemberCard {...member} delay={0} />
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Timeline Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 2.4 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Journey" subtitle="Key milestones in our growth story" />
 
@@ -230,10 +264,9 @@ export function AboutPageClient() {
             ].map((milestone, index) => (
               <motion.div
                 key={milestone.year}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 2.6 + index * 0.1 }}
                 className="flex gap-6 items-start"
               >
                 <div className="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-primary-foreground">
@@ -241,16 +274,22 @@ export function AboutPageClient() {
                 </div>
                 <div className="flex-1 glass rounded-2xl p-6">
                   <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
-                  <p className="text-muted-foreground">{milestone.description}</p>
+                  <p className="text-muted-foreground text-white">{milestone.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <CTASection />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 3.2 }}
+      >
+        <CTASection />
+      </motion.div>
     </main>
   )
 }

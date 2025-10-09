@@ -4,50 +4,87 @@ import { ContactForm } from "@/components/contact-form"
 import { ContactInfoCard } from "@/components/contact-info-card"
 import { SectionHeading } from "@/components/section-heading"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function ContactPageClient() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
     <>
       {/* Contact Info Cards */}
-      <section className="relative py-12">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="relative py-12"
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <ContactInfoCard
-              icon={Mail}
-              title="Email Us"
-              content="info@aryansoft.com"
-              link="mailto:info@aryansoft.com"
-              delay={0}
-            />
-            <ContactInfoCard
-              icon={Phone}
-              title="Call Us"
-              content="+1 (555) 123-4567"
-              link="tel:+15551234567"
-              delay={0.1}
-            />
-            <ContactInfoCard
-              icon={MapPin}
-              title="Visit Us"
-              content="123 Tech Street, Silicon Valley, CA 94025"
-              delay={0.2}
-            />
-            <ContactInfoCard icon={Clock} title="Business Hours" content="Mon-Fri: 9AM - 6PM PST" delay={0.3} />
+            {[
+              {
+                icon: Mail,
+                title: "Email Us",
+                content: "info@aryansoft.com",
+                link: "mailto:info@aryansoft.com",
+              },
+              {
+                icon: Phone,
+                title: "Call Us",
+                content: "+1 (555) 123-4567",
+                link: "tel:+15551234567",
+              },
+              {
+                icon: MapPin,
+                title: "Visit Us",
+                content: "123 Tech Street, Silicon Valley, CA 94025",
+              },
+              {
+                icon: Clock,
+                title: "Business Hours",
+                content: "Mon-Fri: 9AM - 6PM PST",
+              },
+            ].map((info, index) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              >
+                <ContactInfoCard {...info} delay={0} />
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Form Section */}
-      <section className="relative py-12">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
+        className="relative py-12"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <ContactForm />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Map Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl overflow-hidden h-96">
             <iframe
@@ -62,10 +99,15 @@ export function ContactPageClient() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* FAQ Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading title="Frequently Asked Questions" subtitle="Quick answers to common questions" />
 
@@ -97,14 +139,20 @@ export function ContactPageClient() {
                   "We offer flexible engagement models including staff augmentation, where our developers work alongside your existing team to accelerate development.",
               },
             ].map((faq, index) => (
-              <div key={index} className="glass rounded-2xl p-6 hover-lift">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
+                className="glass rounded-2xl p-6 hover-lift"
+              >
                 <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
                 <p className="text-muted-foreground text-pretty">{faq.answer}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }

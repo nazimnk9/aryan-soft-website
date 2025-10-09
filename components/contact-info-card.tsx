@@ -28,7 +28,7 @@ export function ContactInfoCard({ icon: Icon, title, content, link, delay = 0 }:
         <Icon className="w-7 h-7 text-primary-foreground" />
       </motion.div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-muted-foreground">{content}</p>
+      <p className="text-muted-foreground text-white">{content}</p>
     </motion.div>
   )
 

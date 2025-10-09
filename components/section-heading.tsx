@@ -19,16 +19,14 @@ export function SectionHeading({ title, subtitle, centered = true, className }: 
       transition={{ duration: 0.6 }}
       className={cn("space-y-4", centered && "text-center", className)}
     >
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance">
-        <span className="gradient-text">{title}</span>
-      </h2>
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance text-white">{title}</h2>
       {subtitle && (
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty"
+          className="text-lg md:text-xl text-white max-w-3xl mx-auto text-pretty"
         >
           {subtitle}
         </motion.p>

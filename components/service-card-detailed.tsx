@@ -36,7 +36,7 @@ export function ServiceCardDetailed({
           <Icon className="w-8 h-8 text-primary-foreground" />
         </motion.div>
         <CardTitle className="text-2xl mb-2">{title}</CardTitle>
-        <CardDescription className="text-base">{description}</CardDescription>
+        <CardDescription className="text-base text-white">{description}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div>
@@ -52,7 +52,7 @@ export function ServiceCardDetailed({
                 className="flex items-start gap-2 text-muted-foreground"
               >
                 <span className="text-primary mt-1">▸</span>
-                <span>{feature}</span>
+                <span className="text-white">{feature}</span>
               </motion.li>
             ))}
           </ul>

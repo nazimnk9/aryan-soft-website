@@ -113,17 +113,27 @@ export function PortfolioClient() {
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0 }}
+        className="relative py-20 md:py-32"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Our Portfolio"
             subtitle="Explore our successful projects and see how we've helped businesses transform through innovative software solutions"
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Filter Section */}
-      <section className="relative py-8">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="relative py-8"
+      >
         <div className="container mx-auto px-4">
           <PortfolioFilter
             categories={categories}
@@ -131,7 +141,7 @@ export function PortfolioClient() {
             onCategoryChange={setActiveCategory}
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Grid */}
       <section className="relative py-12">
@@ -139,14 +149,21 @@ export function PortfolioClient() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {filteredProjects.map((project, index) => (
-                <ProjectCard key={project.title} {...project} delay={index * 0.05} />
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                >
+                  <ProjectCard {...project} delay={0} />
+                </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -164,7 +181,12 @@ export function PortfolioClient() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl p-12 md:p-16">
             <SectionHeading title="Project Success Metrics" subtitle="Numbers that speak for our excellence" />
@@ -179,22 +201,27 @@ export function PortfolioClient() {
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
                   className="text-center"
                 >
                   <div className="text-5xl font-bold gradient-text mb-2">{stat.value}</div>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <p className="text-muted-foreground text-white">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <CTASection />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 2.1 }}
+      >
+        <CTASection />
+      </motion.div>
     </main>
   )
 }

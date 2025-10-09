@@ -28,7 +28,7 @@ export function ValueCard({ icon: Icon, title, description, delay = 0 }: ValueCa
         <Icon className="w-7 h-7 text-primary-foreground" />
       </motion.div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-muted-foreground text-pretty">{description}</p>
+      <p className="text-muted-foreground text-pretty text-white">{description}</p>
     </motion.div>
   )
 }

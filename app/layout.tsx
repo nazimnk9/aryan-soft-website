@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { LoadingScreen } from "@/components/loading-screen"
+import { RouteChangeHandler } from "@/components/route-change-handler"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,7 +50,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'Aryan Soft Ltd'
 }
 
 export default function RootLayout({
@@ -58,12 +58,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
           <LoadingScreen />
+          <RouteChangeHandler />
           <Navigation />
-          <div className="pt-20">{children}</div>
+          <div className="pt-24">{children}</div>
           <Footer />
           <ScrollToTop />
           <Toaster />

@@ -42,7 +42,7 @@ export function ProjectCard({
 
       <CardContent className="p-6 space-y-4">
         <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="text-muted-foreground text-pretty">{description}</p>
+        <p className="text-muted-foreground text-pretty text-white">{description}</p>
 
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (

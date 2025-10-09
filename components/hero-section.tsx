@@ -1,244 +1,3 @@
-// "use client"
-
-// import { motion } from "framer-motion"
-// import { AnimatedButton } from "@/components/animated-button"
-// import { Canvas } from "@react-three/fiber"
-// import { OrbitControls, Sphere, MeshDistortMaterial, Float, Stars } from "@react-three/drei"
-// import { useRef } from "react"
-// import type { Mesh } from "three"
-// import { Zap, Code2, Brain } from "lucide-react"
-// import Link from "next/link"
-
-// function AnimatedSphere() {
-//   const meshRef = useRef<Mesh>(null)
-
-//   return (
-//     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-//       <Sphere ref={meshRef} args={[1, 100, 100]} scale={1.8}>
-//         <MeshDistortMaterial
-//           color="#00e5ff"
-//           attach="material"
-//           distort={0.5}
-//           speed={2.5}
-//           roughness={0.1}
-//           metalness={0.9}
-//           emissive="#00d4ff"
-//           emissiveIntensity={0.3}
-//         />
-//       </Sphere>
-//     </Float>
-//   )
-// }
-
-// function Background3D() {
-//   return (
-//     <div className="absolute inset-0 z-0 opacity-30">
-//       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-//         <ambientLight intensity={0.6} />
-//         <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00d4ff" />
-//         <pointLight position={[-10, -10, -5]} intensity={0.8} color="#0a2463" />
-//         <pointLight position={[5, 5, 5]} intensity={0.5} color="#00e5ff" />
-//         <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
-//         <AnimatedSphere />
-//         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.8} />
-//       </Canvas>
-//     </div>
-//   )
-// }
-
-// const features = [
-//   {
-//     icon: Zap,
-//     title: "FastAPI",
-//     subtitle: "Ultra-fast APIs",
-//     description: "Async I/O, rate limits, JWT, and OpenAPI docs built-in",
-//   },
-//   {
-//     icon: Code2,
-//     title: "Next.js",
-//     subtitle: "SEO + Speed",
-//     description: "App Router, edge rendering, and image optimizations",
-//   },
-//   {
-//     icon: Brain,
-//     title: "AI Copilots",
-//     subtitle: "Automate the tedious",
-//     description: "Context-aware assistants, document AI, and voice bots",
-//   },
-// ]
-
-// export function HeroSection() {
-//   return (
-//     // <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0d1b2a] to-[#1b263b]">
-//     <section className="relative min-h-screen flex items-center overflow-hidden">
-//       {/* 3D Background Animation */}
-//       {/* <Background3D /> */}
-
-//       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-//         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
-//           {/* Left Column - Content */}
-//           <motion.div
-//             initial={{ opacity: 0, x: -50 }}
-//             animate={{ opacity: 1, x: 0 }}
-//             transition={{ duration: 0.8 }}
-//             className="space-y-8"
-//           >
-//             {/* Badge */}
-//             <motion.div
-//               initial={{ opacity: 0, y: -20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.6, delay: 0.2 }}
-//               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
-//             >
-//               <Zap className="w-4 h-4 text-cyan-400" />
-//               <span className="text-sm text-gray-300">Build faster with AI + modern web</span>
-//             </motion.div>
-
-//             {/* Main Heading */}
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.8, delay: 0.3 }}
-//             >
-//               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
-//                 <span className="text-white">Software that</span>
-//                 <br />
-//                 <span className="text-white">scales your</span>
-//                 <br />
-//                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-//                   business
-//                 </span>
-//               </h1>
-//             </motion.div>
-
-//             {/* Description */}
-//             <motion.p
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.8, delay: 0.4 }}
-//               className="text-lg md:text-xl text-gray-400 max-w-2xl text-pretty leading-relaxed"
-//             >
-//               Aryan Soft crafts world-class ERP, CRM websites, and AI-powered apps using React, Next.js, JavaScript,
-//               Python, Django, and FastAPI. We ship secure, blazing-fast software—designed to grow with you.
-//             </motion.p>
-
-//             {/* CTA Buttons */}
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.8, delay: 0.5 }}
-//               className="flex flex-col sm:flex-row gap-4"
-//             >
-//               <Link href="#contact">
-//                 <AnimatedButton size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
-//                   Get a Quote
-//                 </AnimatedButton>
-//               </Link>
-//               <Link href="#portfolio">
-//                 <AnimatedButton size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-white/5">
-//                   See our work
-//                 </AnimatedButton>
-//               </Link>
-//             </motion.div>
-
-//             {/* Stats */}
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.8, delay: 0.6 }}
-//               className="grid grid-cols-3 gap-8 pt-8"
-//             >
-//               <div>
-//                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-//                   120+
-//                 </div>
-//                 <div className="text-sm text-gray-500 mt-1">Projects shipped</div>
-//               </div>
-//               <div>
-//                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-//                   &lt;30d
-//                 </div>
-//                 <div className="text-sm text-gray-500 mt-1">Avg. go-live</div>
-//               </div>
-//               <div>
-//                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-//                   99.98%
-//                 </div>
-//                 <div className="text-sm text-gray-500 mt-1">Uptime across clients</div>
-//               </div>
-//             </motion.div>
-//           </motion.div>
-
-//           {/* Right Column - Feature Cards with Video Background */}
-//           <motion.div
-//             initial={{ opacity: 0, x: 50 }}
-//             animate={{ opacity: 1, x: 0 }}
-//             transition={{ duration: 0.8, delay: 0.4 }}
-//             className="relative"
-//           >
-//             {/* Video Background */}
-//             <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-20">
-//               <video
-//                 autoPlay
-//                 loop
-//                 muted
-//                 playsInline
-//                 className="w-full h-full object-cover"
-//                 poster="https://www.youtube.com/watch?v=FAprM96GiRg"
-//               >
-//                 <source src="https://www.youtube.com/watch?v=FAprM96GiRg" type="video/mp4" />
-//               </video>
-//               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10" />
-//             </div>
-
-//             {/* Feature Cards */}
-//             <div className="relative z-10 space-y-4">
-//               {features.map((feature, index) => (
-//                 <motion.div
-//                   key={feature.title}
-//                   initial={{ opacity: 0, y: 20 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-//                   whileHover={{ scale: 1.02, x: 10 }}
-//                   className="glass-dark rounded-2xl p-6 backdrop-blur-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-//                 >
-//                   <div className="flex items-start gap-4">
-//                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center flex-shrink-0">
-//                       <feature.icon className="w-6 h-6 text-cyan-400" />
-//                     </div>
-//                     <div className="flex-1">
-//                       <div className="flex items-center gap-2 mb-1">
-//                         <span className="text-xs text-cyan-400 font-semibold uppercase tracking-wider">
-//                           {feature.title}
-//                         </span>
-//                       </div>
-//                       <h3 className="text-xl font-bold text-white mb-2">{feature.subtitle}</h3>
-//                       <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
-//                     </div>
-//                   </div>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.div>
-//         </div>
-//       </div>
-
-//       {/* Scroll Indicator */}
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: 1 }}
-//         transition={{ duration: 1, delay: 1 }}
-//         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
-//       >
-//         <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex justify-center">
-//           <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
-//         </div>
-//       </motion.div>
-//     </section>
-//   )
-// }
-
-
 "use client"
 
 import { motion, useMotionValue } from "framer-motion"
@@ -247,8 +6,9 @@ import { Canvas, useFrame } from "@react-three/fiber"
 import { Float, MeshDistortMaterial } from "@react-three/drei"
 import { useRef, useEffect, useState } from "react"
 import type { Mesh } from "three"
-import { Zap, Code2, Brain, Sparkles, Rocket, Cpu } from "lucide-react"
+import { Zap, Code2, Brain, Rocket } from "lucide-react"
 import Link from "next/link"
+import LogoCarousel from "@/components/logo-carousel"
 
 function NetworkNode({ position, color }: any) {
   const meshRef = useRef<Mesh>(null)
@@ -353,27 +113,21 @@ function Background3D({ mouseX, mouseY }: { mouseX: number; mouseY: number }) {
 const features = [
   {
     icon: Zap,
-    title: "FastAPI",
-    subtitle: "Ultra-fast APIs",
+    label: "FastAPI",
+    title: "Ultra-fast APIs",
     description: "Async I/O, rate limits, JWT, and OpenAPI docs built-in",
-    gradient: "from-yellow-400 to-orange-500",
-    bgGradient: "from-yellow-500/10 to-orange-500/10",
   },
   {
     icon: Code2,
-    title: "Next.js",
-    subtitle: "SEO + Speed",
+    label: "Next.js",
+    title: "SEO + Speed",
     description: "App Router, edge rendering, and image optimizations",
-    gradient: "from-cyan-400 to-blue-500",
-    bgGradient: "from-cyan-500/10 to-blue-500/10",
   },
   {
     icon: Brain,
-    title: "AI Copilots",
-    subtitle: "Automate the tedious",
+    label: "AI Copilots",
+    title: "Automate the tedious",
     description: "Context-aware assistants, document AI, and voice bots",
-    gradient: "from-purple-400 to-pink-500",
-    bgGradient: "from-purple-500/10 to-pink-500/10",
   },
 ]
 
@@ -395,232 +149,248 @@ export function HeroSection() {
   }, [mouseX, mouseY])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <Background3D mouseX={mousePos.x} mouseY={mousePos.y} />
+    <>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Background3D mouseX={mousePos.x} mouseY={mousePos.y} />
 
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
-          {/* Left Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            {/* Badge */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
+            {/* Left Column - Content */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 backdrop-blur-sm border border-primary/20 dark:border-primary/40 hover:border-primary/40 dark:hover:border-primary/60 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <Rocket className="w-4 h-4 text-primary animate-pulse" />
-              <span className="text-sm font-medium text-foreground">Build faster with AI + modern web</span>
-            </motion.div>
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/40 hover:border-cyan-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+              >
+                <Rocket className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <span className="text-sm font-medium text-white">Build faster with AI + modern web</span>
+              </motion.div>
 
-            {/* Main Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
-                <span className="text-foreground">Software that</span>
-                <br />
-                <span className="text-foreground">scales your</span>
-                <br />
-                <span className="bg-gradient-to-r from-primary via-blue-500 to-cyan-500 dark:from-primary dark:via-blue-400 dark:to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                  business
-                </span>
-              </h1>
-            </motion.div>
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
+                  <span className="text-white">Software that</span>
+                  <br />
+                  <span className="text-white">scales your</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                    business
+                  </span>
+                </h1>
+              </motion.div>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl text-pretty leading-relaxed"
-            >
-              Aryan Soft crafts world-class ERP, CRM websites, and AI-powered apps using React, Next.js, JavaScript,
-              Python, Django, and FastAPI. We ship secure, blazing-fast software—designed to grow with you.
-            </motion.p>
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg md:text-xl text-white max-w-2xl text-pretty leading-relaxed"
+              >
+                Aryan Soft crafts world-class ERP, CRM websites, and AI-powered apps using React, Next.js, JavaScript,
+                Python, Django, and FastAPI. We ship secure, blazing-fast software—designed to grow with you.
+              </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Link href="#contact">
-                <AnimatedButton
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 transition-all duration-300"
-                >
-                  Get a Quote
-                </AnimatedButton>
-              </Link>
-              <Link href="#portfolio">
-                <AnimatedButton
-                  size="lg"
-                  variant="outline"
-                  className="border-2 hover:bg-primary/10 transition-all duration-300"
-                >
-                  See our work
-                </AnimatedButton>
-              </Link>
-            </motion.div>
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Link href="#contact">
+                  <AnimatedButton size="lg">Get a Quote</AnimatedButton>
+                </Link>
+                <Link href="#portfolio">
+                  <AnimatedButton size="lg" variant="outline">
+                    See our work
+                  </AnimatedButton>
+                </Link>
+              </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-3 gap-8 pt-8"
-            >
-              <div className="group cursor-default">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                  120+
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Projects shipped</div>
-              </div>
-              <div className="group cursor-default">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                  &lt;30d
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Avg. go-live</div>
-              </div>
-              <div className="group cursor-default">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                  99.98%
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Uptime across clients</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Feature Cards with YouTube Video Background */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative h-[600px] lg:h-[700px]"
-          >
-            <div className="absolute inset-0 rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 z-0">
-                <iframe
-                  src="https://www.youtube.com/embed/FAprM96GiRg?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
-                  className="w-full h-full object-cover scale-110"
-                  allow="autoplay; encrypted-media"
-                  style={{ pointerEvents: "none" }}
-                  title="Background video"
-                />
-              </div>
-              {/* Enhanced overlay for better card visibility */}
-              <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/70 to-background/80 dark:from-background/70 dark:via-background/80 dark:to-background/90 backdrop-blur-[2px]" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-blue-500/5 dark:from-primary/10 dark:via-transparent dark:to-blue-500/10" />
-            </div>
-
-            <div className="relative z-10 h-full grid grid-rows-3 gap-4 p-4">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
-                  whileHover={{ scale: 1.03, x: 8 }}
-                  className="group relative"
-                >
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl -z-10"
-                    style={{
-                      background: `linear-gradient(135deg, ${
-                        feature.gradient.includes("yellow")
-                          ? "#fbbf24"
-                          : feature.gradient.includes("cyan")
-                            ? "#06b6d4"
-                            : "#a855f7"
-                      }40, ${
-                        feature.gradient.includes("orange")
-                          ? "#f97316"
-                          : feature.gradient.includes("blue")
-                            ? "#3b82f6"
-                            : "#ec4899"
-                      }40)`,
-                    }}
-                  />
-
-                  <div className="h-full backdrop-blur-xl bg-card/80 dark:bg-card/60 border-2 border-border/50 dark:border-border/30 rounded-2xl p-6 hover:bg-card/90 dark:hover:bg-card/80 hover:border-primary/50 dark:hover:border-primary/60 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary/30 overflow-hidden">
-                    {/* Animated background gradient */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${feature.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    />
-
-                    <div className="relative flex items-start gap-4 h-full">
-                      {/* Icon */}
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
-                      >
-                        <feature.icon className="w-7 h-7 text-white" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span
-                            className={`text-xs font-bold uppercase tracking-wider bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}
-                          >
-                            {feature.title}
-                          </span>
-                          <Sparkles className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                          {feature.subtitle}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Decorative corner accent */}
-                    <div
-                      className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${feature.gradient} opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500`}
-                    />
+              {/* Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="grid grid-cols-3 gap-8 pt-8"
+              >
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    120+
                   </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Floating tech icons */}
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-                rotate: [0, 5, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-              className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-primary to-blue-500 rounded-2xl flex items-center justify-center shadow-xl shadow-primary/50 dark:shadow-primary/30 z-20"
-            >
-              <Cpu className="w-8 h-8 text-white" />
+                  <div className="text-sm text-white mt-1">Projects shipped</div>
+                </div>
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    &lt;30d
+                  </div>
+                  <div className="text-sm text-white mt-1">Avg. go-live</div>
+                </div>
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    99.98%
+                  </div>
+                  <div className="text-sm text-white mt-1">Uptime across clients</div>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
-      >
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-pulse" />
+            {/* Right Column - Feature Cards with YouTube Video Background */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative h-[600px] lg:h-[700px]"
+            >
+              {/* Video Background Container */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                  <iframe
+                    src="https://www.youtube.com/embed/FAprM96GiRg?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+                    className="w-full h-full object-cover scale-125"
+                    allow="autoplay; encrypted-media"
+                    style={{ pointerEvents: "none" }}
+                    title="Background video"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0d1b2a]/92 to-[#1b263b]/90 backdrop-blur-[2px]" />
+              </div>
+
+              {/* Feature Cards - Matching hero.jpg design */}
+              <div className="relative z-10 h-full flex flex-col justify-center gap-5 p-6">
+                {/* First Row - Two cards side by side */}
+                <div className="grid grid-cols-2 gap-5">
+                  {features.slice(0, 2).map((feature, index) => (
+                    <motion.div
+                      key={feature.label}
+                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="group relative"
+                    >
+                      <motion.div
+                        animate={{
+                          boxShadow: [
+                            "0 0 15px rgba(6, 182, 212, 0.08)",
+                            "0 0 25px rgba(6, 182, 212, 0.15)",
+                            "0 0 15px rgba(6, 182, 212, 0.08)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: index * 0.5,
+                        }}
+                        className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300 h-full"
+                      >
+                        {/* Icon and Label Row */}
+                        <div className="flex items-center gap-3 mb-3">
+                          <motion.div
+                            whileHover={{ rotate: 360, scale: 1.15 }}
+                            transition={{ duration: 0.6 }}
+                            className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                          >
+                            <feature.icon className="w-4 h-4 text-cyan-400" />
+                          </motion.div>
+                          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                            {feature.label}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-white leading-relaxed">{feature.description}</p>
+                      </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Second Row - One card spanning full width */}
+                {features.slice(2).map((feature, index) => (
+                  <motion.div
+                    key={feature.label}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.9 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    className="group relative"
+                  >
+                    <motion.div
+                      animate={{
+                        boxShadow: [
+                          "0 0 15px rgba(6, 182, 212, 0.08)",
+                          "0 0 25px rgba(6, 182, 212, 0.15)",
+                          "0 0 15px rgba(6, 182, 212, 0.08)",
+                        ],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Number.POSITIVE_INFINITY,
+                        delay: 1,
+                      }}
+                      className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300"
+                    >
+                      {/* Icon and Label Row */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <motion.div
+                          whileHover={{ rotate: 360, scale: 1.15 }}
+                          transition={{ duration: 0.6 }}
+                          className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                        >
+                          <feature.icon className="w-4 h-4 text-cyan-400" />
+                        </motion.div>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                          {feature.label}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-sm text-white leading-relaxed">{feature.description}</p>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-    </section>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        >
+          <div className="w-6 h-10 border-2 border-cyan-500/50 rounded-full flex justify-center">
+            <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* <div className="relative z-10 -mt-10">
+        <LogoCarousel />
+      </div> */}
+    </>
   )
 }

@@ -192,28 +192,50 @@ export function ServicesPageClient() {
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0 }}
+        className="relative py-20 md:py-32"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Our Services"
             subtitle="Comprehensive software solutions designed to transform your business and drive innovation through cutting-edge technology"
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Grid */}
-      <section className="relative py-12">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="relative py-12"
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCardDetailed key={service.title} {...service} delay={index * 0.05} />
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              >
+                <ServiceCardDetailed {...service} delay={0} />
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Process Section */}
-      <section className="relative py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.7 }}
+        className="relative py-20"
+      >
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Process" subtitle="How we deliver exceptional results for every project" />
 
@@ -243,22 +265,27 @@ export function ServicesPageClient() {
               <motion.div
                 key={process.step}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.9 + index * 0.1 }}
                 className="text-center"
               >
                 <div className="text-6xl font-bold gradient-text mb-4">{process.step}</div>
                 <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                <p className="text-muted-foreground text-pretty">{process.description}</p>
+                <p className="text-muted-foreground text-pretty text-white">{process.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <CTASection />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 2.3 }}
+      >
+        <CTASection />
+      </motion.div>
     </main>
   )
 }

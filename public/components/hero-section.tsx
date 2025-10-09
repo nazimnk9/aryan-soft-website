@@ -1,0 +1,396 @@
+"use client"
+
+import { motion, useMotionValue } from "framer-motion"
+import { AnimatedButton } from "@/components/animated-button"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { Float, MeshDistortMaterial } from "@react-three/drei"
+import { useRef, useEffect, useState } from "react"
+import type { Mesh } from "three"
+import { Zap, Code2, Brain, Rocket } from "lucide-react"
+import Link from "next/link"
+import LogoCarousel from "@/components/logo-carousel"
+
+function NetworkNode({ position, color }: any) {
+  const meshRef = useRef<Mesh>(null)
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.3
+      meshRef.current.scale.setScalar(1 + Math.sin(state.clock.elapsedTime * 2) * 0.1)
+    }
+  })
+
+  return (
+    <mesh ref={meshRef} position={position}>
+      <sphereGeometry args={[0.1, 16, 16]} />
+      <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.8} metalness={0.8} roughness={0.2} />
+    </mesh>
+  )
+}
+
+function FloatingShape({ position, shape, color, speed }: any) {
+  const meshRef = useRef<Mesh>(null)
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.4
+      meshRef.current.rotation.y = state.clock.elapsedTime * speed * 0.6
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * speed) * 0.5
+    }
+  })
+
+  return (
+    <Float speed={speed} rotationIntensity={1} floatIntensity={2}>
+      <mesh ref={meshRef} position={position}>
+        {shape === "sphere" && <sphereGeometry args={[0.5, 32, 32]} />}
+        {shape === "box" && <boxGeometry args={[0.8, 0.8, 0.8]} />}
+        {shape === "torus" && <torusGeometry args={[0.4, 0.15, 16, 32]} />}
+        {shape === "cone" && <coneGeometry args={[0.4, 0.8, 32]} />}
+        <MeshDistortMaterial
+          color={color}
+          attach="material"
+          distort={0.4}
+          speed={3}
+          roughness={0.1}
+          metalness={0.9}
+          emissive={color}
+          emissiveIntensity={0.5}
+          transparent
+          opacity={0.85}
+        />
+      </mesh>
+    </Float>
+  )
+}
+
+function Scene3D({ mouseX, mouseY }: { mouseX: number; mouseY: number }) {
+  const groupRef = useRef<any>(null)
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.x = mouseY * 0.0003
+      groupRef.current.rotation.y = mouseX * 0.0003
+    }
+  })
+
+  return (
+    <>
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00d4ff" />
+      <pointLight position={[-10, -10, -5]} intensity={1} color="#4a9eff" />
+      <pointLight position={[5, 5, 5]} intensity={0.8} color="#00e5ff" />
+      <spotLight position={[0, 10, 0]} intensity={1.2} color="#00ccff" angle={0.3} penumbra={1} />
+
+      <group ref={groupRef}>
+        {Array.from({ length: 30 }).map((_, i) => (
+          <NetworkNode
+            key={i}
+            position={[(Math.random() - 0.5) * 12, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8]}
+            color={i % 3 === 0 ? "#00d4ff" : i % 3 === 1 ? "#00e5ff" : "#4a9eff"}
+          />
+        ))}
+
+        <FloatingShape position={[-3, 1, 0]} shape="sphere" color="#00d4ff" speed={1} />
+        <FloatingShape position={[3, -1, -2]} shape="box" color="#00e5ff" speed={1.3} />
+        <FloatingShape position={[0, 2, 1]} shape="torus" color="#4a9eff" speed={0.9} />
+        <FloatingShape position={[-2, -2, -1]} shape="cone" color="#00ccff" speed={1.1} />
+        <FloatingShape position={[2, 0, -3]} shape="sphere" color="#0099cc" speed={0.8} />
+      </group>
+    </>
+  )
+}
+
+function Background3D({ mouseX, mouseY }: { mouseX: number; mouseY: number }) {
+  return (
+    <div className="absolute inset-0 z-0 opacity-30 dark:opacity-40">
+      <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
+        <Scene3D mouseX={mouseX} mouseY={mouseY} />
+      </Canvas>
+    </div>
+  )
+}
+
+const features = [
+  {
+    icon: Zap,
+    label: "FastAPI",
+    title: "Ultra-fast APIs",
+    description: "Async I/O, rate limits, JWT, and OpenAPI docs built-in",
+  },
+  {
+    icon: Code2,
+    label: "Next.js",
+    title: "SEO + Speed",
+    description: "App Router, edge rendering, and image optimizations",
+  },
+  {
+    icon: Brain,
+    label: "AI Copilots",
+    title: "Automate the tedious",
+    description: "Context-aware assistants, document AI, and voice bots",
+  },
+]
+
+export function HeroSection() {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX - window.innerWidth / 2
+      const y = e.clientY - window.innerHeight / 2
+      mouseX.set(x)
+      mouseY.set(y)
+      setMousePos({ x, y })
+    }
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [mouseX, mouseY])
+
+  return (
+    <>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <Background3D mouseX={mousePos.x} mouseY={mousePos.y} />
+
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
+            {/* Left Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/40 hover:border-cyan-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+              >
+                <Rocket className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <span className="text-sm font-medium text-white">Build faster with AI + modern web</span>
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
+                  <span className="text-white">Software that</span>
+                  <br />
+                  <span className="text-white">scales your</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                    business
+                  </span>
+                </h1>
+              </motion.div>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg md:text-xl text-white/90 max-w-2xl text-pretty leading-relaxed"
+              >
+                Aryan Soft crafts world-class ERP, CRM websites, and AI-powered apps using React, Next.js, JavaScript,
+                Python, Django, and FastAPI. We ship secure, blazing-fast software—designed to grow with you.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Link href="#contact">
+                  <AnimatedButton size="lg">Get a Quote</AnimatedButton>
+                </Link>
+                <Link href="#portfolio">
+                  <AnimatedButton size="lg" variant="outline">
+                    See our work
+                  </AnimatedButton>
+                </Link>
+              </motion.div>
+
+              {/* Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="grid grid-cols-3 gap-8 pt-8"
+              >
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    120+
+                  </div>
+                  <div className="text-sm text-white/80 mt-1">Projects shipped</div>
+                </div>
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    &lt;30d
+                  </div>
+                  <div className="text-sm text-white/80 mt-1">Avg. go-live</div>
+                </div>
+                <div className="group cursor-default">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    99.98%
+                  </div>
+                  <div className="text-sm text-white/80 mt-1">Uptime across clients</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Feature Cards with YouTube Video Background */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative h-[600px] lg:h-[700px]"
+            >
+              {/* Video Background Container */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                  <iframe
+                    src="https://www.youtube.com/embed/FAprM96GiRg?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+                    className="w-full h-full object-cover scale-125"
+                    allow="autoplay; encrypted-media"
+                    style={{ pointerEvents: "none" }}
+                    title="Background video"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0d1b2a]/92 to-[#1b263b]/90 backdrop-blur-[2px]" />
+              </div>
+
+              {/* Feature Cards - Matching hero.jpg design */}
+              <div className="relative z-10 h-full flex flex-col justify-center gap-5 p-6">
+                {/* First Row - Two cards side by side */}
+                <div className="grid grid-cols-2 gap-5">
+                  {features.slice(0, 2).map((feature, index) => (
+                    <motion.div
+                      key={feature.label}
+                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="group relative"
+                    >
+                      <motion.div
+                        animate={{
+                          boxShadow: [
+                            "0 0 15px rgba(6, 182, 212, 0.08)",
+                            "0 0 25px rgba(6, 182, 212, 0.15)",
+                            "0 0 15px rgba(6, 182, 212, 0.08)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: index * 0.5,
+                        }}
+                        className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300 h-full"
+                      >
+                        {/* Icon and Label Row */}
+                        <div className="flex items-center gap-3 mb-3">
+                          <motion.div
+                            whileHover={{ rotate: 360, scale: 1.15 }}
+                            transition={{ duration: 0.6 }}
+                            className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                          >
+                            <feature.icon className="w-4 h-4 text-cyan-400" />
+                          </motion.div>
+                          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                            {feature.label}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-white/80 leading-relaxed">{feature.description}</p>
+                      </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Second Row - One card spanning full width */}
+                {features.slice(2).map((feature, index) => (
+                  <motion.div
+                    key={feature.label}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.9 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    className="group relative"
+                  >
+                    <motion.div
+                      animate={{
+                        boxShadow: [
+                          "0 0 15px rgba(6, 182, 212, 0.08)",
+                          "0 0 25px rgba(6, 182, 212, 0.15)",
+                          "0 0 15px rgba(6, 182, 212, 0.08)",
+                        ],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Number.POSITIVE_INFINITY,
+                        delay: 1,
+                      }}
+                      className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300"
+                    >
+                      {/* Icon and Label Row */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <motion.div
+                          whileHover={{ rotate: 360, scale: 1.15 }}
+                          transition={{ duration: 0.6 }}
+                          className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                        >
+                          <feature.icon className="w-4 h-4 text-cyan-400" />
+                        </motion.div>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                          {feature.label}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-sm text-white/80 leading-relaxed">{feature.description}</p>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        >
+          <div className="w-6 h-10 border-2 border-cyan-500/50 rounded-full flex justify-center">
+            <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
+          </div>
+        </motion.div>
+      </section>
+
+      <div className="relative z-10 -mt-10">
+        <LogoCarousel />
+      </div>
+    </>
+  )
+}

@@ -136,14 +136,12 @@ export function TechStack() {
   }
 
   return (
-    <section id="stack" className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-cyan-400 to-primary bg-clip-text text-transparent">
-            Our Technology Stack
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Our Technology Stack</h2>
+          <p className="text-lg text-white max-w-2xl mx-auto">
             Cutting-edge technologies powering innovative solutions
           </p>
         </div>
@@ -156,8 +154,8 @@ export function TechStack() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category.id
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30 scale-105"
-                  : "bg-secondary/50 text-secondary-foreground hover:bg-secondary hover:scale-105"
+                  ? "bg-cyan-500/20 text-white border border-cyan-500/40 shadow-lg shadow-cyan-500/20 scale-105"
+                  : "bg-secondary/50 text-white/70 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:scale-105"
               }`}
             >
               {category.label}
@@ -165,8 +163,8 @@ export function TechStack() {
           ))}
         </div>
 
-        {/* 3D Canvas */}
-        {/* <div className="h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 border border-primary/20 mb-12 relative">
+        {/* 3D Canvas
+        <div className="h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 border border-primary/20 mb-12 relative">
           <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
             <TechScene />
           </Canvas>
@@ -195,7 +193,7 @@ export function TechStack() {
                 >
                   {tech.icon}
                 </div>
-                <span className="text-sm font-medium text-center group-hover:text-primary transition-colors">
+                <span className="text-sm font-medium text-center text-white group-hover:text-cyan-400 transition-colors">
                   {tech.name}
                 </span>
               </div>

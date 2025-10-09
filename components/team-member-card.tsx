@@ -45,7 +45,7 @@ export function TeamMemberCard({
 
         <h3 className="text-xl font-bold mb-1">{name}</h3>
         <p className="text-primary font-medium mb-3">{role}</p>
-        <p className="text-muted-foreground text-sm mb-4 text-pretty">{bio}</p>
+        <p className="text-muted-foreground text-sm mb-4 text-pretty text-white">{bio}</p>
 
         <div className="flex justify-center gap-2">
           {linkedin && (
