@@ -4,6 +4,7 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { SectionHeading } from "@/components/section-heading"
 import { AnimatedButton } from "@/components/animated-button"
 import Image from "next/image"
@@ -87,11 +88,11 @@ export function PortfolioPreview() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <a href="/portfolio" onClick={handleViewAllProjects}>
+          <Link href="/portfolio" onClick={handleViewAllProjects}>
             <AnimatedButton size="lg" showArrow>
               View All Projects
             </AnimatedButton>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

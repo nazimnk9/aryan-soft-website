@@ -15,8 +15,9 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
-  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#stack", label: "Stack" },
   { href: "/#about", label: "About" },
+  { href: "/#portfolio", label: "Portfolio" },
   { href: "/#contact", label: "Contact" },
 ]
 
@@ -32,7 +33,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 20)
 
       if (pathname === "/") {
-        const sections = ["services", "portfolio", "about", "contact"]
+        const sections = ["services","stack", "portfolio", "about", "contact"]
         const scrollPosition = window.scrollY + 100
 
         for (const section of sections) {
@@ -74,13 +75,27 @@ export function Navigation() {
         setTimeout(() => {
           const element = document.getElementById(id)
           if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" })
+            const offset = 100
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+            const offsetPosition = elementPosition - offset
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            })
           }
         }, 100)
       } else {
         const element = document.getElementById(id)
         if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" })
+          const offset = 100
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+          const offsetPosition = elementPosition - offset
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          })
         }
       }
       setIsMobileMenuOpen(false)
@@ -128,7 +143,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
@@ -145,15 +160,15 @@ export function Navigation() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
+            <Link href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
               <AnimatedButton showArrow>Get Started</AnimatedButton>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -191,7 +206,7 @@ export function Navigation() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <a
+                      <Link
                         href={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
                         className={cn(
@@ -202,7 +217,7 @@ export function Navigation() {
                         )}
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </motion.div>
                   ))}
                   <motion.div
@@ -211,11 +226,11 @@ export function Navigation() {
                     transition={{ delay: navLinks.length * 0.1 }}
                     className="pt-4 px-4"
                   >
-                    <a href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
+                    <Link href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
                       <AnimatedButton className="w-full" showArrow>
                         Get Started
                       </AnimatedButton>
-                    </a>
+                    </Link>
                   </motion.div>
                 </div>
               </div>

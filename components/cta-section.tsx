@@ -4,14 +4,26 @@ import type React from "react"
 
 import { AnimatedButton } from "@/components/animated-button"
 import { motion } from "framer-motion"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function CTASection() {
+  const pathname = usePathname()
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
     if (href.startsWith("#")) {
-      const element = document.getElementById(href.substring(1))
+      e.preventDefault()
+      const id = href.substring(1)
+      const element = document.getElementById(id)
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
+        const offset = 100
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+        const offsetPosition = elementPosition - offset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        })
       }
     }
   }
@@ -34,16 +46,32 @@ export function CTASection() {
             competition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>
-              <AnimatedButton size="lg" showArrow>
-                Get Started
-              </AnimatedButton>
-            </a>
-            <a href="#portfolio" onClick={(e) => handleClick(e, "#portfolio")}>
-              <AnimatedButton size="lg" variant="outline">
-                View Our Work
-              </AnimatedButton>
-            </a>
+            {pathname === "/" ? (
+              <Link href="#contact" onClick={(e) => handleClick(e, "#contact")}>
+                <AnimatedButton size="lg" showArrow>
+                  Get Started
+                </AnimatedButton>
+              </Link>
+            ) : (
+              <Link href="/#contact">
+                <AnimatedButton size="lg" showArrow>
+                  Get Started
+                </AnimatedButton>
+              </Link>
+            )}
+            {pathname === "/" ? (
+              <Link href="#portfolio" onClick={(e) => handleClick(e, "#portfolio")}>
+                <AnimatedButton size="lg" variant="outline">
+                  View Our Work
+                </AnimatedButton>
+              </Link>
+            ) : (
+              <Link href="/#portfolio">
+                <AnimatedButton size="lg" variant="outline">
+                  View Our Work
+                </AnimatedButton>
+              </Link>
+            )}
           </div>
         </motion.div>
       </div>
