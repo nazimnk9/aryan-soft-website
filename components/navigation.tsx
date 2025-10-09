@@ -15,7 +15,6 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
-  { href: "/#stack", label: "Stack" },
   { href: "/#portfolio", label: "Portfolio" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
@@ -33,7 +32,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 20)
 
       if (pathname === "/") {
-        const sections = ["services","stack", "portfolio", "about", "contact"]
+        const sections = ["services", "portfolio", "about", "contact"]
         const scrollPosition = window.scrollY + 100
 
         for (const section of sections) {
@@ -112,17 +111,16 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <motion.div
-              whileHover={{ rotate: 360 }}
+              whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              className="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0"
+              className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0"
             >
               <Image
                 src="/images/logo.png"
                 alt="Aryan Soft"
                 fill
-                className="object-contain drop-shadow-none"
+                className="object-contain drop-shadow-[0_0_20px_rgba(6,182,212,0.3)]"
                 priority
-                style={{ filter: "drop-shadow(0 0 0 transparent)" }}
               />
             </motion.div>
           </Link>

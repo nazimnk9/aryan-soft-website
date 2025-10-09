@@ -195,7 +195,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg md:text-xl text-white max-w-2xl text-pretty leading-relaxed"
+                className="text-lg md:text-xl text-white/90 max-w-2xl text-pretty leading-relaxed"
               >
                 Aryan Soft crafts world-class ERP, CRM websites, and AI-powered apps using React, Next.js, JavaScript,
                 Python, Django, and FastAPI. We ship secure, blazing-fast software—designed to grow with you.
@@ -229,19 +229,19 @@ export function HeroSection() {
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     120+
                   </div>
-                  <div className="text-sm text-white mt-1">Projects shipped</div>
+                  <div className="text-sm text-white/80 mt-1">Projects shipped</div>
                 </div>
                 <div className="group cursor-default">
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     &lt;30d
                   </div>
-                  <div className="text-sm text-white mt-1">Avg. go-live</div>
+                  <div className="text-sm text-white/80 mt-1">Avg. go-live</div>
                 </div>
                 <div className="group cursor-default">
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     99.98%
                   </div>
-                  <div className="text-sm text-white mt-1">Uptime across clients</div>
+                  <div className="text-sm text-white/80 mt-1">Uptime across clients</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -271,105 +271,202 @@ export function HeroSection() {
               <div className="relative z-10 h-full flex flex-col justify-center gap-5 p-6">
                 {/* First Row - Two cards side by side */}
                 <div className="grid grid-cols-2 gap-5">
-                  {features.slice(0, 2).map((feature, index) => (
-                    <motion.div
-                      key={feature.label}
-                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      className="group relative"
-                    >
-                      <motion.div
-                        animate={{
-                          boxShadow: [
-                            "0 0 15px rgba(6, 182, 212, 0.08)",
-                            "0 0 25px rgba(6, 182, 212, 0.15)",
-                            "0 0 15px rgba(6, 182, 212, 0.08)",
-                          ],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Number.POSITIVE_INFINITY,
-                          delay: index * 0.5,
-                        }}
-                        className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300 h-full"
-                      >
-                        {/* Icon and Label Row */}
-                        <div className="flex items-center gap-3 mb-3">
-                          <motion.div
-                            whileHover={{ rotate: 360, scale: 1.15 }}
-                            transition={{ duration: 0.6 }}
-                            className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
-                          >
-                            <feature.icon className="w-4 h-4 text-cyan-400" />
-                          </motion.div>
-                          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
-                            {feature.label}
-                          </span>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
-                          {feature.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-sm text-white leading-relaxed">{feature.description}</p>
-                      </motion.div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Second Row - One card spanning full width */}
-                {features.slice(2).map((feature, index) => (
+                  {/* First Card - Pulse and Glow Animation */}
                   <motion.div
-                    key={feature.label}
                     initial={{ opacity: 0, y: 20, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.9 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    whileHover={{ scale: 1.05, y: -8 }}
                     className="group relative"
                   >
                     <motion.div
                       animate={{
                         boxShadow: [
-                          "0 0 15px rgba(6, 182, 212, 0.08)",
-                          "0 0 25px rgba(6, 182, 212, 0.15)",
-                          "0 0 15px rgba(6, 182, 212, 0.08)",
+                          "0 0 20px rgba(6, 182, 212, 0.2)",
+                          "0 0 40px rgba(6, 182, 212, 0.4)",
+                          "0 0 20px rgba(6, 182, 212, 0.2)",
                         ],
+                        scale: [1, 1.02, 1],
                       }}
                       transition={{
-                        duration: 3,
+                        duration: 2,
                         repeat: Number.POSITIVE_INFINITY,
-                        delay: 1,
+                        ease: "easeInOut",
                       }}
-                      className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/30 transition-all duration-300"
+                      className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/50 transition-all duration-300 h-full"
                     >
                       {/* Icon and Label Row */}
                       <div className="flex items-center gap-3 mb-3">
                         <motion.div
-                          whileHover={{ rotate: 360, scale: 1.15 }}
-                          transition={{ duration: 0.6 }}
+                          animate={{
+                            rotate: [0, 360],
+                            scale: [1, 1.2, 1],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "easeInOut",
+                          }}
                           className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
                         >
-                          <feature.icon className="w-4 h-4 text-cyan-400" />
+                          <Zap className="w-4 h-4 text-cyan-400" />
                         </motion.div>
                         <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
-                          {feature.label}
+                          {features[0].label}
                         </span>
                       </div>
 
                       {/* Title */}
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
-                        {feature.title}
+                        {features[0].title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-white leading-relaxed">{feature.description}</p>
+                      <p className="text-sm text-white/80 leading-relaxed">{features[0].description}</p>
                     </motion.div>
                   </motion.div>
-                ))}
+
+                  {/* Second Card - Wave and Shimmer Animation */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.75 }}
+                    whileHover={{ scale: 1.05, y: -8, rotateY: 5 }}
+                    className="group relative"
+                  >
+                    <motion.div
+                      animate={{
+                        background: [
+                          "linear-gradient(135deg, rgba(10, 22, 40, 0.7) 0%, rgba(13, 27, 42, 0.7) 100%)",
+                          "linear-gradient(135deg, rgba(13, 27, 42, 0.7) 0%, rgba(27, 38, 59, 0.7) 100%)",
+                          "linear-gradient(135deg, rgba(10, 22, 40, 0.7) 0%, rgba(13, 27, 42, 0.7) 100%)",
+                        ],
+                        borderColor: ["rgba(255, 255, 255, 0.1)", "rgba(6, 182, 212, 0.3)", "rgba(255, 255, 255, 0.1)"],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                        delay: 0.5,
+                      }}
+                      className="backdrop-blur-xl border rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 h-full relative overflow-hidden"
+                    >
+                      {/* Shimmer effect */}
+                      <motion.div
+                        animate={{
+                          x: ["-100%", "200%"],
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: "linear",
+                          repeatDelay: 1,
+                        }}
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
+                      />
+
+                      {/* Icon and Label Row */}
+                      <div className="flex items-center gap-3 mb-3 relative z-10">
+                        <motion.div
+                          animate={{
+                            y: [0, -5, 0],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "easeInOut",
+                          }}
+                          className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                        >
+                          <Code2 className="w-4 h-4 text-cyan-400" />
+                        </motion.div>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                          {features[1].label}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300 relative z-10">
+                        {features[1].title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-sm text-white/80 leading-relaxed relative z-10">{features[1].description}</p>
+                    </motion.div>
+                  </motion.div>
+                </div>
+
+                {/* Second Row - One card spanning full width with Floating Animation */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.9 }}
+                  whileHover={{ scale: 1.03, y: -8 }}
+                  className="group relative"
+                >
+                  <motion.div
+                    animate={{
+                      y: [0, -10, 0],
+                      boxShadow: [
+                        "0 10px 30px rgba(6, 182, 212, 0.15)",
+                        "0 20px 50px rgba(6, 182, 212, 0.25)",
+                        "0 10px 30px rgba(6, 182, 212, 0.15)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                      delay: 1,
+                    }}
+                    className="backdrop-blur-xl bg-[#0a1628]/70 border border-white/10 rounded-2xl p-5 hover:bg-[#0d1b2a]/75 hover:border-cyan-500/50 transition-all duration-300 relative overflow-hidden"
+                  >
+                    {/* Animated gradient border */}
+                    <motion.div
+                      animate={{
+                        rotate: [0, 360],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "linear",
+                      }}
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background: "conic-gradient(from 0deg, transparent, rgba(6, 182, 212, 0.3), transparent)",
+                      }}
+                    />
+
+                    {/* Icon and Label Row */}
+                    <div className="flex items-center gap-3 mb-3 relative z-10">
+                      <motion.div
+                        animate={{
+                          rotate: [0, 15, -15, 0],
+                          scale: [1, 1.1, 1.1, 1],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: "easeInOut",
+                        }}
+                        className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-blue-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0"
+                      >
+                        <Brain className="w-4 h-4 text-cyan-400" />
+                      </motion.div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400/60">
+                        {features[2].label}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300 relative z-10">
+                      {features[2].title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-white/80 leading-relaxed relative z-10">{features[2].description}</p>
+                  </motion.div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

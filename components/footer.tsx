@@ -21,15 +21,18 @@ export function Footer() {
           {/* Brand Section */}
           <div className="text-center mb-12">
             <Link href="/" className="inline-flex items-center justify-center gap-3 mb-6">
-              <div className="relative w-20 h-20 md:w-24 md:h-24">
+              <motion.div
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+                className="relative w-32 h-32 md:w-40 md:h-40"
+              >
                 <Image
                   src="/images/logo.png"
                   alt="Aryan Soft"
                   fill
-                  className="object-contain drop-shadow-none"
-                  style={{ filter: "drop-shadow(0 0 0 transparent)" }}
+                  className="object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.4)]"
                 />
-              </div>
+              </motion.div>
             </Link>
             <p className="text-lg text-white font-medium mb-8 text-pretty max-w-2xl mx-auto">
               Transforming businesses through innovative software solutions and cutting-edge technology.
