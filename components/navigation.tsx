@@ -128,7 +128,7 @@ export function Navigation() {
             <motion.div
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0"
+              className="relative w-25 h-25 md:w-24 md:h-24 flex-shrink-0"
             >
               <Image
                 src="/images/logo.png"
