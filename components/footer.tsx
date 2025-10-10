@@ -16,14 +16,14 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="relative bg-secondary/20 border-t border-border/50">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-4xl mx-auto">
           {/* Brand Section */}
           <div className="text-center mb-12">
             <Link href="/" className="inline-flex items-center justify-center gap-3 mb-6">
               <motion.div
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.6 }}
+                // whileHover={{ rotate: 360, scale: 1.1 }}
+                // transition={{ duration: 0.6 }}
                 className="relative w-32 h-32 md:w-40 md:h-40"
               >
                 <Image

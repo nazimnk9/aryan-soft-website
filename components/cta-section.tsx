@@ -30,18 +30,18 @@ export function CTASection() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 animate-gradient" />
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass rounded-3xl p-12 md:p-16 text-center"
+          className="rounded-3xl p-8 sm:p-12 md:p-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Ready to Transform Your Business?</h2>
-          <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto text-pretty font-medium">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-2xl mx-auto text-pretty font-medium">
             Let's discuss how our innovative solutions can help you achieve your goals and stay ahead of the
             competition.
           </p>

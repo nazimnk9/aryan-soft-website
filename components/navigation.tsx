@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
-  { href: "/#stack", label: "Stack" },
+  { href: "/#tech-stack", label: "Stack" },
   { href: "/#about", label: "About" },
   { href: "/#portfolio", label: "Portfolio" },
   { href: "/#contact", label: "Contact" },
@@ -33,7 +33,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 20)
 
       if (pathname === "/") {
-        const sections = ["services","stack", "portfolio", "about", "contact"]
+        const sections = ["services", "tech-stack", "portfolio", "about", "contact"]
         const scrollPosition = window.scrollY + 100
 
         for (const section of sections) {
@@ -121,13 +121,13 @@ export function Navigation() {
         isScrolled ? "glass shadow-lg py-3" : "bg-transparent py-4",
       )}
     >
-      <nav className="container mx-auto px-4">
+      <nav className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <motion.div
-              whileHover={{ rotate: 360, scale: 1.1 }}
-              transition={{ duration: 0.6 }}
+              // whileHover={{ rotate: 360, scale: 1.1 }}
+              // transition={{ duration: 0.6 }}
               className="relative w-25 h-25 md:w-24 md:h-24 flex-shrink-0"
             >
               <Image
@@ -186,27 +186,28 @@ export function Navigation() {
 
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden mt-4"
-            >
-              <div className="relative rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
-                <div className="absolute inset-0 backdrop-blur-xl bg-background/80" />
-                <div className="absolute inset-0 rounded-2xl border-2 border-primary/30" />
+            // <motion.div
+            //   initial={{ opacity: 0, height: 0 }}
+            //   animate={{ opacity: 1, height: "auto" }}
+            //   exit={{ opacity: 0, height: 0 }}
+            //   transition={{ duration: 0.3 }}
+            //   className="lg:hidden overflow-hidden mt-4"
+            // >
+            //   <div className="relative rounded-2xl overflow-hidden">
+            //     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
+            //     <div className="absolute inset-0 backdrop-blur-xl bg-background/80" />
+            //     <div className="absolute inset-0 rounded-2xl border-2 border-primary/30" />
 
-                <div className="relative py-6 px-4 space-y-4">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
+                <div className="relative rounded-2xl overflow-hidden py-6 px-4 space-y-4 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 absolute inset-0 backdrop-blur-xl bg-background/80 absolute inset-0 rounded-2xl border-2 border-primary/30">
+                  {navLinks.map((link) => (
+                    // <motion.div
+                    //   key={link.href}
+                    //   initial={{ opacity: 0, x: -20 }}
+                    //   animate={{ opacity: 1, x: 0 }}
+                    //   transition={{ delay: index * 0.1 }}
+                    // >
                       <Link
+                        key={link.href}
                         href={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
                         className={cn(
@@ -218,7 +219,7 @@ export function Navigation() {
                       >
                         {link.label}
                       </Link>
-                    </motion.div>
+                    // </motion.div>
                   ))}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -233,8 +234,8 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 </div>
-              </div>
-            </motion.div>
+            //   </div>
+            // </motion.div>
           )}
         </AnimatePresence>
       </nav>

@@ -41,7 +41,7 @@ export function PortfolioPreview() {
 
   return (
     <section id="portfolio" className="relative py-20 md:py-32 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <SectionHeading
           title="Featured Projects"
           subtitle="Explore our portfolio of successful software solutions across various industries"

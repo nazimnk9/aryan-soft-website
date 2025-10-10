@@ -44,7 +44,7 @@ export default function LogoCarousel() {
   }, [])
 
   return (
-    <div className="w-full overflow-hidden py-12 relative">
+    <div className="w-full overflow-hidden py-12 relative sm:px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       {/* Gradient overlays for fade effect */}
       <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />

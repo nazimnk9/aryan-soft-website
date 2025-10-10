@@ -151,9 +151,9 @@ export function HeroSection() {
   return (
     <>
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* <Background3D mouseX={mousePos.x} mouseY={mousePos.y} /> */}
+        <Background3D mouseX={mousePos.x} mouseY={mousePos.y} />
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
             {/* Left Column - Content */}
             <motion.div
@@ -179,7 +179,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 className="mt-24 sm:mt-28 md:mt-32 lg:mt-0 text-5xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance sm: pl-4 md:pl-4 lg:pl-4 xl:pl-4 2xl:pl-4">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
                   <span className="text-white">Software that</span>
                   <br />
                   <span className="text-white">scales your</span>
@@ -206,7 +206,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 sm: pl-4 md:pl-4 lg:pl-4 xl:pl-4 2xl:pl-4"
+                className="flex flex-col sm:flex-row gap-4"
               >
                 <Link href="#contact">
                   <AnimatedButton size="lg">Get a Quote</AnimatedButton>
@@ -224,7 +224,7 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px] mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24"
+              className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px]"
             >
               {/* Video Background Container */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
@@ -295,7 +295,7 @@ export function HeroSection() {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-white leading-relaxed">{features[0].description}</p>
+                      <p className="text-sm text-white/80 leading-relaxed">{features[0].description}</p>
                     </motion.div>
                   </motion.div>
 
@@ -364,7 +364,7 @@ export function HeroSection() {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-white leading-relaxed relative z-10">{features[1].description}</p>
+                      <p className="text-sm text-white/80 leading-relaxed relative z-10">{features[1].description}</p>
                     </motion.div>
                   </motion.div>
                 </div>
@@ -437,7 +437,7 @@ export function HeroSection() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-white leading-relaxed relative z-10">{features[2].description}</p>
+                    <p className="text-sm text-white/80 leading-relaxed relative z-10">{features[2].description}</p>
                   </motion.div>
                 </motion.div>
               </div>

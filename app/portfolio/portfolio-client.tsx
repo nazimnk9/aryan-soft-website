@@ -119,7 +119,7 @@ export function PortfolioClient() {
         transition={{ duration: 0.5, delay: 0 }}
         className="relative py-20 md:py-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <SectionHeading
             title="Our Portfolio"
             subtitle="Explore our successful projects and see how we've helped businesses transform through innovative software solutions"
@@ -134,7 +134,7 @@ export function PortfolioClient() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="relative py-8"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <PortfolioFilter
             categories={categories}
             activeCategory={activeCategory}
@@ -145,7 +145,7 @@ export function PortfolioClient() {
 
       {/* Projects Grid */}
       <section className="relative py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -179,40 +179,6 @@ export function PortfolioClient() {
           )}
         </div>
       </section>
-
-      {/* Stats Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
-        className="relative py-20"
-      >
-        <div className="container mx-auto px-4">
-          <div className="glass rounded-3xl p-12 md:p-16">
-            <SectionHeading title="Project Success Metrics" subtitle="Numbers that speak for our excellence" />
-
-            <div className="grid md:grid-cols-4 gap-8 mt-12">
-              {[
-                { value: "98%", label: "Client Satisfaction" },
-                { value: "500+", label: "Projects Delivered" },
-                { value: "15+", label: "Years Experience" },
-                { value: "50+", label: "Team Members" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-5xl font-bold gradient-text mb-2">{stat.value}</div>
-                  <p className="text-muted-foreground text-white">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.section>
 
       {/* CTA Section */}
       <motion.div

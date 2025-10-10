@@ -198,7 +198,7 @@ export function ServicesPageClient() {
         transition={{ duration: 0.5, delay: 0 }}
         className="relative py-20 md:py-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <SectionHeading
             title="Our Services"
             subtitle="Comprehensive software solutions designed to transform your business and drive innovation through cutting-edge technology"
@@ -213,7 +213,7 @@ export function ServicesPageClient() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="relative py-12"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
@@ -223,55 +223,6 @@ export function ServicesPageClient() {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               >
                 <ServiceCardDetailed {...service} delay={0} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Process Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.7 }}
-        className="relative py-20"
-      >
-        <div className="container mx-auto px-4">
-          <SectionHeading title="Our Process" subtitle="How we deliver exceptional results for every project" />
-
-          <div className="grid md:grid-cols-4 gap-8 mt-16">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                description: "We analyze your needs and define project requirements",
-              },
-              {
-                step: "02",
-                title: "Design",
-                description: "Create wireframes, prototypes, and technical architecture",
-              },
-              {
-                step: "03",
-                title: "Development",
-                description: "Build your solution using agile methodologies",
-              },
-              {
-                step: "04",
-                title: "Delivery",
-                description: "Deploy, test, and provide ongoing support",
-              },
-            ].map((process, index) => (
-              <motion.div
-                key={process.step}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.9 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-6xl font-bold gradient-text mb-4">{process.step}</div>
-                <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                <p className="text-muted-foreground text-pretty text-white">{process.description}</p>
               </motion.div>
             ))}
           </div>

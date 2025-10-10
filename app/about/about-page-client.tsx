@@ -115,7 +115,7 @@ export function AboutPageClient() {
         transition={{ duration: 0.5, delay: 0 }}
         className="relative py-20 md:py-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -143,7 +143,7 @@ export function AboutPageClient() {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="relative py-20"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="max-w-4xl mx-auto">
             <div className="glass rounded-3xl p-8 md:p-12 space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold gradient-text">Our Story</h2>
@@ -173,7 +173,7 @@ export function AboutPageClient() {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="relative py-20"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <SectionHeading title="Our Values" subtitle="The principles that guide everything we do" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
@@ -198,7 +198,7 @@ export function AboutPageClient() {
         transition={{ duration: 0.5, delay: 1.7 }}
         className="relative py-20"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <SectionHeading
             title="Meet Our Team"
             subtitle="The talented individuals behind our success and your digital transformation"
@@ -226,7 +226,7 @@ export function AboutPageClient() {
         transition={{ duration: 0.5, delay: 2.4 }}
         className="relative py-20"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <SectionHeading title="Our Journey" subtitle="Key milestones in our growth story" />
 
           <div className="max-w-3xl mx-auto mt-16 space-y-8">

@@ -18,7 +18,6 @@ import {
   Lock,
   Layers,
 } from "lucide-react"
-import { motion } from "framer-motion"
 
 const services = [
   {
@@ -207,51 +206,6 @@ export default function ServicesClient() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCardDetailed key={service.title} {...service} delay={index * 0.05} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="relative py-20">
-        <div className="container mx-auto px-4">
-          <SectionHeading title="Our Process" subtitle="How we deliver exceptional results for every project" />
-
-          <div className="grid md:grid-cols-4 gap-8 mt-16">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                description: "We analyze your needs and define project requirements",
-              },
-              {
-                step: "02",
-                title: "Design",
-                description: "Create wireframes, prototypes, and technical architecture",
-              },
-              {
-                step: "03",
-                title: "Development",
-                description: "Build your solution using agile methodologies",
-              },
-              {
-                step: "04",
-                title: "Delivery",
-                description: "Deploy, test, and provide ongoing support",
-              },
-            ].map((process, index) => (
-              <motion.div
-                key={process.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-6xl font-bold gradient-text mb-4">{process.step}</div>
-                <h3 className="text-xl font-semibold mb-2">{process.title}</h3>
-                <p className="text-muted-foreground text-pretty">{process.description}</p>
-              </motion.div>
             ))}
           </div>
         </div>
