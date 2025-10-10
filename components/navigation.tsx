@@ -213,7 +213,7 @@ export function Navigation() {
                         className={cn(
                           "block py-3 px-4 text-lg font-medium transition-all rounded-lg cursor-pointer text-white",
                           activeSection === link.href
-                            ? "text-cyan-400 bg-primary/10 border-l-4 border-primary"
+                            ? "text-cyan-400 bg-primary/10"
                             : "hover:text-cyan-400 hover:bg-primary/5",
                         )}
                       >

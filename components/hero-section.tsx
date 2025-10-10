@@ -9,6 +9,7 @@ import type { Mesh } from "three"
 import { Zap, Code2, Brain, Rocket } from "lucide-react"
 import Link from "next/link"
 import LogoCarousel from "@/components/logo-carousel"
+import { DNAVortex } from "@/components/dna-vortex"
 
 function NetworkNode({ position, color }: any) {
   const meshRef = useRef<Mesh>(null)
@@ -110,6 +111,53 @@ function Background3D({ mouseX, mouseY }: { mouseX: number; mouseY: number }) {
   )
 }
 
+function ParticleBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Generate multiple particles with different positions and animations */}
+      {Array.from({ length: 50 }).map((_, i) => {
+        const isPink = i % 2 === 0
+        const size = Math.random() * 4 + 2
+        const left = Math.random() * 100
+        const top = Math.random() * 100
+        const duration = Math.random() * 3 + 2
+        const delay = Math.random() * 2
+
+        return (
+          <motion.div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              left: `${left}%`,
+              top: `${top}%`,
+              width: `${size}px`,
+              height: `${size}px`,
+              background: isPink
+                ? "radial-gradient(circle, rgba(236, 72, 153, 0.8) 0%, rgba(219, 39, 119, 0.4) 50%, transparent 100%)"
+                : "radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.4) 50%, transparent 100%)",
+              boxShadow: isPink
+                ? "0 0 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(236, 72, 153, 0.3)"
+                : "0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3)",
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              scale: [1, 1.5, 1],
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: duration,
+              repeat: Number.POSITIVE_INFINITY,
+              delay: delay,
+              ease: "easeInOut",
+            }}
+          />
+        )
+      })}
+    </div>
+  )
+}
+
 const features = [
   {
     icon: Zap,
@@ -153,7 +201,7 @@ export function HeroSection() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* <Background3D mouseX={mousePos.x} mouseY={mousePos.y} /> */}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
             {/* Left Column - Content */}
             <motion.div
@@ -224,20 +272,21 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px] mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24"
+              className="relative w-full h-[440px] sm:h-[340px] md:h-[340px] lg:h-[340px] xl:h-[390px]"
             >
               {/* Video Background Container */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                {/* <div className="absolute inset-0 z-0">
                   <iframe
-                    src="https://www.youtube.com/embed/FAprM96GiRg?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+                    src="https://www.pexels.com/download/video/33844964/?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
                     className="w-full h-full object-cover scale-225"
                     allow="autoplay; encrypted-media"
                     style={{ pointerEvents: "none" }}
                     title="Background video"
                   />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0d1b2a]/92 to-[#1b263b]/90 backdrop-blur-[2px]" />
+                </div> */}
+                <DNAVortex backgroundColor="#000000" particleCount={400} containerClassName="w-full h-full" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/60 via-[#0d1b2a]/50 to-[#1b263b]/60 backdrop-blur-[1px]" />
               </div>
 
               {/* Feature Cards - Matching hero.jpg design */}
