@@ -217,45 +217,188 @@ import { useState } from "react"
 
 const techStack = {
   languages: [
-    { name: "JavaScript", icon: "JS", color: "#F7DF1E" },
-    { name: "TypeScript", icon: "TS", color: "#0e61b9ff" },
-    { name: "Python", icon: "PY", color: "#3776AB" },
-    { name: "Java", icon: "JV", color: "#007396" },
-    { name: "Go", icon: "GO", color: "#00ADD8" },
-    { name: "Rust", icon: "RS", color: "#CE422B" },
+    { 
+      name: "JavaScript", 
+      icon: "JS", 
+      color: "#F7DF1E",
+      description: "Dynamic programming language for web development",
+      features: ["Versatile", "Event-driven", "Cross-platform", "Large ecosystem"]
+    },
+    { 
+      name: "TypeScript", 
+      icon: "TS", 
+      color: "#0e61b9ff",
+      description: "Strongly typed programming language built on JavaScript",
+      features: ["Type safety", "Better tooling", "Scalable", "Modern syntax"]
+    },
+    { 
+      name: "Python", 
+      icon: "PY", 
+      color: "#3776AB",
+      description: "High-level programming language with clean syntax",
+      features: ["Readable code", "Rich libraries", "AI/ML ready", "Rapid development"]
+    },
+    { 
+      name: "Java", 
+      icon: "JV", 
+      color: "#007396",
+      description: "Object-oriented programming language for enterprise applications",
+      features: ["Platform independent", "Robust", "Secure", "Multithreaded"]
+    },
+    { 
+      name: "Go", 
+      icon: "GO", 
+      color: "#00ADD8",
+      description: "Fast, statically typed language designed for modern computing",
+      features: ["Concurrent", "Simple syntax", "Fast compilation", "Cloud native"]
+    },
+    { 
+      name: "Rust", 
+      icon: "RS", 
+      color: "#CE422B",
+      description: "Systems programming language focused on safety and performance",
+      features: ["Memory safe", "Zero-cost abstractions", "Concurrent", "Fast"]
+    },
   ],
   frameworks: [
-    { name: "React", icon: "RC", color: "#61DAFB" },
-    { name: "Next.js", icon: "NX", color: "#0e5eb3" },
-    { name: "Vue.js", icon: "VU", color: "#4FC08D" },
-    { name: "Django", icon: "DJ", color: "#092E20" },
-    { name: "FastAPI", icon: "FA", color: "#009688" },
-    { name: "Express", icon: "EX", color: "#2e6991" },
+    { 
+      name: "React", 
+      icon: "RC", 
+      color: "#61DAFB",
+      description: "JavaScript library for building user interfaces",
+      features: ["Component-based", "Virtual DOM", "Flexible", "Large community"]
+    },
+    { 
+      name: "Next.js", 
+      icon: "NX", 
+      color: "#0e5eb3",
+      description: "React framework with hybrid static & server rendering",
+      features: ["SSR/SSG", "File-based routing", "API routes", "Performance optimized"]
+    },
+    { 
+      name: "Vue.js", 
+      icon: "VU", 
+      color: "#4FC08D",
+      description: "Progressive framework for building user interfaces",
+      features: ["Approachable", "Versatile", "Performant", "Template syntax"]
+    },
+    { 
+      name: "Django", 
+      icon: "DJ", 
+      color: "#092E20",
+      description: "High-level Python web framework for rapid development",
+      features: ["Batteries included", "Secure", "Scalable", "Admin interface"]
+    },
+    { 
+      name: "FastAPI", 
+      icon: "FA", 
+      color: "#009688",
+      description: "Modern, fast web framework for building APIs with Python",
+      features: ["High performance", "Easy to use", "Automatic docs", "Type hints"]
+    },
+    { 
+      name: "Express", 
+      icon: "EX", 
+      color: "#2e6991",
+      description: "Fast, unopinionated web framework for Node.js",
+      features: ["Minimalist", "Flexible", "Middleware support", "Large ecosystem"]
+    },
   ],
   databases: [
-    { name: "PostgreSQL", icon: "PG", color: "#4169E1" },
-    { name: "MongoDB", icon: "MG", color: "#47A248" },
-    { name: "Redis", icon: "RD", color: "#DC382D" },
-    { name: "MySQL", icon: "MY", color: "#4479A1" },
-    { name: "Supabase", icon: "SB", color: "#3ECF8E" },
-    { name: "Firebase", icon: "FB", color: "#FFCA28" },
+    { 
+      name: "PostgreSQL", 
+      icon: "PG", 
+      color: "#4169E1",
+      description: "Advanced open source relational database",
+      features: ["ACID compliant", "Extensible", "Standards compliant", "Reliable"]
+    },
+    { 
+      name: "MongoDB", 
+      icon: "MG", 
+      color: "#47A248",
+      description: "Document-based NoSQL database",
+      features: ["Flexible schema", "Scalable", "Rich queries", "Cloud ready"]
+    },
+    { 
+      name: "Redis", 
+      icon: "RD", 
+      color: "#DC382D",
+      description: "In-memory data structure store",
+      features: ["High performance", "Versatile", "Pub/Sub", "Clustering"]
+    },
+    { 
+      name: "MySQL", 
+      icon: "MY", 
+      color: "#4479A1",
+      description: "Popular open source relational database",
+      features: ["Reliable", "Easy to use", "Secure", "High performance"]
+    },
+    { 
+      name: "Supabase", 
+      icon: "SB", 
+      color: "#3ECF8E",
+      description: "Open source Firebase alternative",
+      features: ["Real-time", "Auth built-in", "API auto-generation", "PostgreSQL"]
+    },
+    { 
+      name: "Firebase", 
+      icon: "FB", 
+      color: "#FFCA28",
+      description: "Google's mobile and web application platform",
+      features: ["Real-time database", "Authentication", "Hosting", "Analytics"]
+    },
   ],
   cloud: [
-    { name: "AWS", icon: "AW", color: "#FF9900" },
-    { name: "Azure", icon: "AZ", color: "#0078D4" },
-    { name: "GCP", icon: "GC", color: "#4285F4" },
-    { name: "Vercel", icon: "VC", color: "#1c5f86" },
-    { name: "Docker", icon: "DK", color: "#2496ED" },
-    { name: "Kubernetes", icon: "K8", color: "#326CE5" },
+    { 
+      name: "AWS", 
+      icon: "AW", 
+      color: "#FF9900",
+      description: "Comprehensive cloud computing platform",
+      features: ["Scalable", "Secure", "Global", "Comprehensive services"]
+    },
+    { 
+      name: "Azure", 
+      icon: "AZ", 
+      color: "#0078D4",
+      description: "Microsoft's cloud computing platform",
+      features: ["Hybrid cloud", "AI integration", "Enterprise ready", "Developer tools"]
+    },
+    { 
+      name: "GCP", 
+      icon: "GC", 
+      color: "#4285F4",
+      description: "Google's cloud computing platform",
+      features: ["Machine learning", "Big data", "Serverless", "Global network"]
+    },
+    { 
+      name: "Vercel", 
+      icon: "VC", 
+      color: "#1c5f86",
+      description: "Platform for frontend frameworks and static sites",
+      features: ["Edge network", "Serverless functions", "Git integration", "Preview deployments"]
+    },
+    { 
+      name: "Docker", 
+      icon: "DK", 
+      color: "#2496ED",
+      description: "Platform for developing, shipping, and running applications",
+      features: ["Containerization", "Portable", "Scalable", "DevOps ready"]
+    },
+    { 
+      name: "Kubernetes", 
+      icon: "K8", 
+      color: "#326CE5",
+      description: "Container orchestration platform",
+      features: ["Auto-scaling", "Self-healing", "Service discovery", "Rolling updates"]
+    },
   ],
 }
 
 export function TechStack() {
-  const [activeCategory, setActiveCategory] = useState<string>("all")
+  const [activeCategory, setActiveCategory] = useState<string>("languages")
   const [activeIndex, setActiveIndex] = useState<number>(0)
 
   const categories = [
-    { id: "all", label: "All Technologies" },
     { id: "languages", label: "Languages" },
     { id: "frameworks", label: "Frameworks" },
     { id: "databases", label: "Databases" },
@@ -263,9 +406,6 @@ export function TechStack() {
   ]
 
   const getFilteredTech = () => {
-    if (activeCategory === "all") {
-      return Object.values(techStack).flat()
-    }
     return techStack[activeCategory as keyof typeof techStack] || []
   }
 
@@ -305,7 +445,7 @@ export function TechStack() {
         </div>
 
         {/* Expandable Tech Gallery */}
-        <div className="flex flex-row align-stretch overflow-hidden min-w-[300px] max-w-5xl w-full h-96 mx-auto rounded-3xl shadow-2xl">
+        <div className="flex flex-row align-stretch overflow-hidden min-w-[300px] max-w-5xl w-full h-96 mx-auto rounded-3xl shadow-2xl mb-12">
           {filteredTech.map((tech, index) => (
             <div
               key={tech.name}
@@ -363,34 +503,64 @@ export function TechStack() {
           ))}
         </div>
 
-        {/* Active Tech Details */}
-        {/* <div className="mt-12 text-center">
-          <div className="max-w-md mx-auto p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-700/50 border border-gray-600/30 backdrop-blur-sm">
-            <div 
-              className="w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center text-2xl font-bold text-white shadow-lg"
-              style={{
-                backgroundColor: filteredTech[activeIndex]?.color,
-                boxShadow: `0 10px 30px ${filteredTech[activeIndex]?.color}40`,
-              }}
-            >
-              {filteredTech[activeIndex]?.icon}
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">
-              {filteredTech[activeIndex]?.name}
-            </h3>
-            <p className="text-gray-300">
-              Click on the technologies above to explore our comprehensive stack
-            </p>
-          </div>
-        </div> */}
+        
 
         {/* Navigation hint */}
-        {/* <div className="text-center mt-8">
+        {/* <div className="text-center mt-12">
           <p className="text-sm text-gray-400 bg-gray-800/50 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-600/30 inline-block">
-            Click to expand • Explore our technology expertise
+            Click on technologies to highlight • Explore different categories
           </p>
         </div> */}
       </div>
     </section>
   )
 }
+
+{/* Technology Information Cards */}
+        // <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        //   {filteredTech.map((tech, index) => (
+        //     <div
+        //       key={tech.name}
+        //       className={`relative p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-700/50 border backdrop-blur-sm transition-all duration-300 cursor-pointer hover:scale-105 ${
+        //         activeIndex === index
+        //           ? 'border-cyan-500/40 shadow-lg shadow-cyan-500/20 bg-gradient-to-br from-cyan-900/20 to-gray-800/50'
+        //           : 'border-gray-600/30 hover:border-gray-500/50'
+        //       }`}
+        //       onClick={() => setActiveIndex(index)}
+        //     >
+        //       {/* Tech Icon */}
+        //       {/* <div className="flex items-center mb-4">
+        //         <div 
+        //           className="w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold text-white shadow-lg mr-4"
+        //           style={{
+        //             backgroundColor: tech.color,
+        //             boxShadow: `0 8px 25px ${tech.color}40`,
+        //           }}
+        //         >
+        //           {tech.icon}
+        //         </div>
+        //         <h3 className="text-xl font-bold text-white">{tech.name}</h3>
+        //       </div> */}
+
+        //       {/* Description */}
+        //       {/* <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+        //         {tech.description}
+        //       </p> */}
+
+        //       {/* Features */}
+        //       {/* <div className="flex flex-wrap gap-2">
+        //         {tech.features.map((feature, idx) => (
+        //           <span
+        //             key={idx}
+        //             className="px-3 py-1 text-xs font-medium rounded-full bg-gray-700/50 text-gray-300 border border-gray-600/30"
+        //           >
+        //             {feature}
+        //           </span>
+        //         ))}
+        //       </div> */}
+
+        //       {/* Hover effect overlay */}
+        //       {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-full transition-transform duration-1000 hover:translate-x-[-100%] rounded-2xl" /> */}
+        //     </div>
+        //   ))}
+        // </div>
