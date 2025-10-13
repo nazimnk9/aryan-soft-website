@@ -45,7 +45,7 @@ export default function HomePage() {
       <PortfolioPreview />
 
       {/* Testimonials */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* Contact Preview */}
       <ContactPreview />

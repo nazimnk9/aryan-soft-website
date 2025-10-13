@@ -198,10 +198,10 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden">
         {/* <Background3D mouseX={mousePos.x} mouseY={mousePos.y} /> */}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-20 sm:mt-20 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
             {/* Left Column - Content */}
             <motion.div
@@ -227,7 +227,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <h1 className="mt-24 sm:mt-28 md:mt-32 lg:mt-0 text-5xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance sm: pl-4 md:pl-4 lg:pl-4 xl:pl-4 2xl:pl-4">
+                <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance sm: pl-4 md:pl-4 lg:pl-4 xl:pl-4 2xl:pl-4">
                   <span className="text-white">Software that</span>
                   <br />
                   <span className="text-white">scales your</span>

@@ -218,7 +218,7 @@ import { useState } from "react"
 const techStack = {
   languages: [
     { name: "JavaScript", icon: "JS", color: "#F7DF1E" },
-    { name: "TypeScript", icon: "TS", color: "#3178C6" },
+    { name: "TypeScript", icon: "TS", color: "#0e61b9ff" },
     { name: "Python", icon: "PY", color: "#3776AB" },
     { name: "Java", icon: "JV", color: "#007396" },
     { name: "Go", icon: "GO", color: "#00ADD8" },
@@ -226,11 +226,11 @@ const techStack = {
   ],
   frameworks: [
     { name: "React", icon: "RC", color: "#61DAFB" },
-    { name: "Next.js", icon: "NX", color: "#000000" },
+    { name: "Next.js", icon: "NX", color: "#0e5eb3" },
     { name: "Vue.js", icon: "VU", color: "#4FC08D" },
     { name: "Django", icon: "DJ", color: "#092E20" },
     { name: "FastAPI", icon: "FA", color: "#009688" },
-    { name: "Express", icon: "EX", color: "#000000" },
+    { name: "Express", icon: "EX", color: "#2e6991" },
   ],
   databases: [
     { name: "PostgreSQL", icon: "PG", color: "#4169E1" },
@@ -244,7 +244,7 @@ const techStack = {
     { name: "AWS", icon: "AW", color: "#FF9900" },
     { name: "Azure", icon: "AZ", color: "#0078D4" },
     { name: "GCP", icon: "GC", color: "#4285F4" },
-    { name: "Vercel", icon: "VC", color: "#000000" },
+    { name: "Vercel", icon: "VC", color: "#1c5f86" },
     { name: "Docker", icon: "DK", color: "#2496ED" },
     { name: "Kubernetes", icon: "K8", color: "#326CE5" },
   ],
@@ -277,7 +277,7 @@ export function TechStack() {
   }
 
   return (
-    <section id="stack" className="py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen">
+    <section id="stack" className="py-20 relative overflow-hidden bg-gradient-to-b from-background to-secondary/20 min-h-screen">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Section Header */}
         <div className="text-center mb-16">
