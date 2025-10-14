@@ -409,7 +409,7 @@ export function AboutPageClient() {
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-3xl p-8 md:p-12 space-y-6 border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden">
+            <div className="glass rounded-2xl p-8 md:p-12 space-y-6 border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden">
               {/* Inner Border Effect */}
               <div className="absolute inset-3 rounded-2xl border-6 border-cyan-400/30 pointer-events-none"></div>
               
@@ -451,7 +451,7 @@ export function AboutPageClient() {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-16">
             {values.map((value, index) => (
               <TiltCard key={value.title} index={index}>
-                <div className="rounded-2xl p-8 text-center hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg h-full flex flex-col relative overflow-hidden group">
+                <div className="glass rounded-2xl p-8 text-center hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg h-full flex flex-col relative overflow-hidden group">
                   {/* Inner Border Effect */}
                   <div className="absolute inset-2 rounded-xl border-6 border-cyan-400/30 pointer-events-none"></div>
                   
@@ -485,7 +485,7 @@ export function AboutPageClient() {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
               <TiltCard key={member.name} index={index}>
-                <div className="rounded-2xl p-8 text-center hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg h-full relative overflow-hidden group">
+                <div className="glass rounded-2xl p-8 text-center hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg h-full relative overflow-hidden group">
                   {/* Inner Border Effect */}
                   <div className="absolute inset-2 rounded-xl border-6 border-cyan-400/30 pointer-events-none"></div>
                   
@@ -544,7 +544,7 @@ export function AboutPageClient() {
                     {/* Inner Border for Year */}
                     <div className="absolute inset-1 rounded-full border-cyan-300/40 pointer-events-none"></div>
                   </div>
-                  <div className="flex-1 rounded-2xl p-8 hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden min-h-[120px] flex items-center">
+                  <div className="flex-1 glass rounded-2xl p-8 hover-lift border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden min-h-[120px] flex items-center">
                     {/* Inner Border Effect */}
                     <div className="absolute inset-2 rounded-xl border-6 border-cyan-400/30 pointer-events-none"></div>
                     
