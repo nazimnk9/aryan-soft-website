@@ -134,8 +134,8 @@ export function ContactInfoCard({ icon: Icon, title, content, link, delay = 0 }:
         className="contact-info-card"
       >
         <motion.div
-          whileHover={{ rotate: 360, scale: 1.1 }}
-          transition={{ duration: 0.6 }}
+          // whileHover={{ rotate: 360, scale: 1.1 }}
+          // transition={{ duration: 0.6 }}
           className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mx-auto mb-4 shadow-lg"
         >
           <Icon className="w-7 h-7 text-white" />
