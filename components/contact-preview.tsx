@@ -687,8 +687,8 @@ export function ContactPreview() {
 
         .contact-preview-card:hover > .card-content {
           background: radial-gradient(
-            400px circle at var(--mouse-x) var(--mouse-y),
-            rgba(59, 130, 246, 0.15),
+            350px circle at var(--mouse-x) var(--mouse-y),
+            var(--border-color, rgba(6, 182, 212, 0.6)),
             transparent 40%
           );
         }
