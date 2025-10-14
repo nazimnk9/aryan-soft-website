@@ -62,7 +62,7 @@ export function Footer() {
                 <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <span className="text-sm font-medium text-center">123 Tech Street, Silicon Valley, CA 94025</span>
+                <span className="text-sm font-medium text-center">House:470, Road:8, Baridhara DOHS, Dhaka</span>
               </div>
             </div>
           </div>

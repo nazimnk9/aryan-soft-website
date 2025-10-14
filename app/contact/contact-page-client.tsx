@@ -563,7 +563,7 @@ export function ContactPageClient() {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Tech Street, Silicon Valley, CA 94025",
+      content: "House:470, Road:8, Baridhara DOHS, Dhaka",
       hoverColor: "rgba(236, 72, 153, 0.2)",
       borderColor: "rgba(236, 72, 153, 0.6)",
       staticBorderColor: "rgba(236, 72, 153, 0.3)",

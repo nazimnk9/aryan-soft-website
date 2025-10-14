@@ -572,7 +572,7 @@ const contactMethods = [
   {
     icon: MapPin,
     title: "Location",
-    value: "Silicon Valley, CA",
+    value: "House:470, Road:8, Baridhara DOHS, Dhaka",
     color: "from-purple-500 to-pink-500",
     hoverColor: "rgba(236, 72, 153, 0.2)",
     borderColor: "rgba(236, 72, 153, 0.6)",
