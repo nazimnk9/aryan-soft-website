@@ -649,7 +649,7 @@ export function ContactPreview() {
             transparent 40%
           );
           z-index: 1;
-          opacity: 0.8;
+          opacity: 0.6;
         }
 
         .contact-preview-card:hover {
@@ -686,7 +686,11 @@ export function ContactPreview() {
         }
 
         .contact-preview-card:hover > .card-content {
-          background-color: rgba(15, 15, 15, 0.9);
+          background: radial-gradient(
+            400px circle at var(--mouse-x) var(--mouse-y),
+            rgba(59, 130, 246, 0.15),
+            transparent 40%
+          );
         }
       `}</style>
 
