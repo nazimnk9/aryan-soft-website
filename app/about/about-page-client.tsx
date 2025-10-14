@@ -382,12 +382,12 @@ export function AboutPageClient() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center mb-8"
             >
-              <div className="relative w-32 h-32 animate-float-slow border-6 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 rounded-full p-2 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-purple-500/20">
+              <div className="relative w-32 h-32 animate-float-slow p-2">
                 <Image 
                   src="/images/logo.png" 
                   alt="Aryan Soft Logo" 
                   fill 
-                  className="object-contain drop-shadow-2xl rounded-full" 
+                  className="object-contain drop-shadow-2xl" 
                 />
               </div>
             </motion.div>
