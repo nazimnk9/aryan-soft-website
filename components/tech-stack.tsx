@@ -417,7 +417,7 @@ export function TechStack() {
   }
 
   return (
-    <section id="stack" className="py-20 relative overflow-hidden bg-gradient-to-b from-background to-secondary/20 min-h-screen">
+    <section id="stack" className="py-20 relative overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Section Header */}
         <div className="text-center mb-16">
