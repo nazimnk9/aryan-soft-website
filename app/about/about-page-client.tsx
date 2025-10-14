@@ -409,12 +409,12 @@ export function AboutPageClient() {
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="max-w-4xl mx-auto">
-            <div className="glass rounded-2xl p-8 md:p-12 space-y-6 border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden">
+            <div className="cursor-default glass rounded-2xl p-8 md:p-12 space-y-6 border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg relative overflow-hidden">
               {/* Inner Border Effect */}
-              <div className="absolute inset-3 rounded-2xl border-6 border-cyan-400/30 pointer-events-none"></div>
+              <div className="absolute inset-3 rounded-2xl border-6 border-cyan-400/30 pointer-events-none cursor-default"></div>
               
-              <h2 className="text-3xl md:text-4xl font-bold gradient-text relative z-10">Our Story</h2>
-              <div className="space-y-4 relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text relative z-10 cursor-default">Our Story</h2>
+              <div className="space-y-4 relative z-10 cursor-default">
                 <p className="text-lg text-white/80 leading-relaxed text-pretty">
                   Founded in 2025, Aryan Soft began with a simple mission: to help businesses leverage technology to
                   achieve their goals. What started as a small team of passionate developers has grown into a full-service
