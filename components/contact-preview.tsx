@@ -393,7 +393,7 @@ export function ContactPreview() {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          border: 1px solid var(--static-border-color, rgba(6, 182, 212, 0.3));
+          border: 2px solid var(--static-border-color, rgba(6, 182, 212, 0.3));
           transition: all 300ms ease;
         }
 
