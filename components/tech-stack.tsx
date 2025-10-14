@@ -227,7 +227,7 @@ const techStack = {
     { 
       name: "TypeScript", 
       icon: "TS", 
-      color: "#0e61b9ff",
+      color: "#0e61b9",
       description: "Strongly typed programming language built on JavaScript",
       features: ["Type safety", "Better tooling", "Scalable", "Modern syntax"]
     },
@@ -285,7 +285,7 @@ const techStack = {
     { 
       name: "Django", 
       icon: "DJ", 
-      color: "#092E20",
+      color: "#1e6175",
       description: "High-level Python web framework for rapid development",
       features: ["Batteries included", "Secure", "Scalable", "Admin interface"]
     },
