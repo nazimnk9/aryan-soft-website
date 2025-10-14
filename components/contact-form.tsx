@@ -61,7 +61,7 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       onSubmit={handleSubmit(onSubmit)}
-      className="glass rounded-3xl p-8 md:p-12 space-y-6"
+      className="glass rounded-3xl p-8 md:p-12 space-y-6 border-2 border-gradient-to-br from-cyan-500 via-blue-500 to-purple-500"
     >
       <div className="space-y-2">
         <Label htmlFor="name">Full Name *</Label>

@@ -95,7 +95,7 @@ export function ContactInfoCard({ icon: Icon, title, content, link, delay = 0 }:
           padding: 1.5rem;
           text-align: center;
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 2px solid var(--static-border-color, rgba(6, 182, 212, 0.3));
         }
 
         .contact-info-card::before {
