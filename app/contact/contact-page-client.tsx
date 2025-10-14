@@ -545,8 +545,8 @@ export function ContactPageClient() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@aryansoft.com",
-      link: "mailto:info@aryansoft.com",
+      content: "info@aryansoftbd.com",
+      link: "mailto:info@aryansoftbd.com",
       hoverColor: "rgba(6, 182, 212, 0.2)",
       borderColor: "rgba(6, 182, 212, 0.6)",
       staticBorderColor: "rgba(6, 182, 212, 0.3)",
@@ -554,8 +554,8 @@ export function ContactPageClient() {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+880-1301-807991",
+      link: "tel:+88001301807991",
       hoverColor: "rgba(139, 92, 246, 0.2)",
       borderColor: "rgba(139, 92, 246, 0.6)",
       staticBorderColor: "rgba(139, 92, 246, 0.3)",

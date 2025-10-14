@@ -552,8 +552,8 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@aryansoft.com",
-    link: "mailto:info@aryansoft.com",
+    value: "info@aryansoftbd.com",
+    link: "mailto:info@aryansoftbd.com",
     color: "from-cyan-500 to-blue-500",
     hoverColor: "rgba(6, 182, 212, 0.2)",
     borderColor: "rgba(6, 182, 212, 0.6)",
@@ -562,8 +562,8 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (555) 123-4567",
-    link: "tel:+15551234567",
+    value: "+880-1301-807991",
+    link: "tel:+88001301807991",
     color: "from-blue-500 to-purple-500",
     hoverColor: "rgba(139, 92, 246, 0.2)",
     borderColor: "rgba(139, 92, 246, 0.6)",

@@ -92,7 +92,7 @@ export function ContactForm() {
           <Input
             id="phone"
             type="tel"
-            placeholder="+1 (555) 123-4567"
+            placeholder="+880-1301-807991"
             {...register("phone")}
             className="bg-background/50 border-border/50 focus:border-primary transition-colors"
           />

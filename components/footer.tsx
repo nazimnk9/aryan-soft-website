@@ -41,22 +41,22 @@ export function Footer() {
             {/* Contact Info */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <a
-                href="mailto:info@aryansoft.com"
+                href="mailto:info@aryansoftbd.com"
                 className="flex flex-col items-center gap-2 text-white hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="text-sm font-medium">info@aryansoft.com</span>
+                <span className="text-sm font-medium">info@aryansoftbd.com</span>
               </a>
               <a
-                href="tel:+15551234567"
+                href="tel:+88001301807991"
                 className="flex flex-col items-center gap-2 text-white hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
-                <span className="text-sm font-medium">+1 (555) 123-4567</span>
+                <span className="text-sm font-medium">+880-1301-807991</span>
               </a>
               <div className="flex flex-col items-center gap-2 text-white">
                 <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
