@@ -83,21 +83,33 @@ const services = [
     technologies: ["Python", "TensorFlow", "PyTorch", "Apache Spark", "Power BI"],
     accentColor: "#10b981", // Green
   },
+  // {
+  //   icon: Palette,
+  //   title: "UI/UX Design",
+  //   description:
+  //     "Beautiful, intuitive interfaces that users love, combining aesthetic appeal with functional excellence.",
+  //   features: [
+  //     "User research and personas",
+  //     "Wireframing and prototyping",
+  //     "Visual design and branding",
+  //     "Usability testing",
+  //     "Design system creation",
+  //   ],
+  //   technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Framer"],
+  //   accentColor: "#f59e0b", // Amber
+  // },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Beautiful, intuitive interfaces that users love, combining aesthetic appeal with functional excellence.",
-    features: [
-      "User research and personas",
-      "Wireframing and prototyping",
-      "Visual design and branding",
-      "Usability testing",
-      "Design system creation",
-    ],
-    technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Framer"],
-    accentColor: "#f59e0b", // Amber
-  },
+  icon: Code,
+  title: "CRM Software from Scratch",
+  description: "Custom-built CRM systems designed to streamline customer management, boost productivity, and enhance business insights.",
+  features: [
+    "Customer data management",
+    "Lead tracking and sales pipeline",
+    "Automation and reporting dashboards"
+  ],
+  technologies: ["Next.js", "Node.js", "MongoDB", "Express.js"],
+  accentColor: "#3b82f6", // Blue
+},
   {
     icon: Shield,
     title: "Cybersecurity",
