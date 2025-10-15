@@ -46,20 +46,25 @@ export function CTASection() {
             competition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {pathname === "/" ? (
+            {/* {pathname === "/" ? (
               <Link href="#contact" onClick={(e) => handleClick(e, "#contact")}>
-                <AnimatedButton size="lg" showArrow>
+                <AnimatedButton size="lg" showArrow className="px-10 py-10 text-xl sm:text-2xl font-semibold">
                   Get Started
                 </AnimatedButton>
               </Link>
             ) : (
-              <Link href="/#contact">
-                <AnimatedButton size="lg" showArrow>
+              <Link href="/contact">
+                <AnimatedButton size="lg" showArrow className="px-10 py-10 text-xl sm:text-2xl font-semibold">
                   Get Started
                 </AnimatedButton>
               </Link>
-            )}
-            {pathname === "/" ? (
+            )} */}
+            <Link href="/contact">
+              <AnimatedButton size="lg" showArrow className="px-10 py-10 text-xl sm:text-2xl font-semibold">
+                Get Started
+              </AnimatedButton>
+            </Link>
+            {/* {pathname === "/" ? (
               <Link href="#portfolio" onClick={(e) => handleClick(e, "#portfolio")}>
                 <AnimatedButton size="lg" variant="outline">
                   View Our Work
@@ -71,7 +76,7 @@ export function CTASection() {
                   View Our Work
                 </AnimatedButton>
               </Link>
-            )}
+            )} */}
           </div>
         </motion.div>
       </div>

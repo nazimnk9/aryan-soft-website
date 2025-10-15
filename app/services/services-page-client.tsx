@@ -1,5 +1,5 @@
 "use client"
-
+import { ServiceCard3D } from "@/components/service-card-3d"
 import { ServiceCardDetailed } from "@/components/service-card-detailed"
 import { SectionHeading } from "@/components/section-heading"
 import { ParticleBackground } from "@/components/particle-background"
@@ -20,6 +20,8 @@ import {
 } from "lucide-react"
 import { motion } from "framer-motion"
 
+//import { motion } from "framer-motion"
+
 const services = [
   {
     icon: Code,
@@ -34,6 +36,7 @@ const services = [
       "Scalable and maintainable code",
     ],
     technologies: ["React", "Node.js", "Python", "Java", ".NET", "Go"],
+    accentColor: "#3b82f6", // Blue
   },
   {
     icon: Smartphone,
@@ -48,6 +51,7 @@ const services = [
       "Ongoing maintenance and updates",
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Expo"],
+    accentColor: "#8b5cf6", // Purple
   },
   {
     icon: Cloud,
@@ -62,6 +66,7 @@ const services = [
       "Cost optimization",
     ],
     technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes"],
+    accentColor: "#06b6d4", // Cyan
   },
   {
     icon: Database,
@@ -76,6 +81,7 @@ const services = [
       "Real-time data processing",
     ],
     technologies: ["Python", "TensorFlow", "PyTorch", "Apache Spark", "Power BI"],
+    accentColor: "#10b981", // Green
   },
   {
     icon: Palette,
@@ -90,6 +96,7 @@ const services = [
       "Design system creation",
     ],
     technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Framer"],
+    accentColor: "#f59e0b", // Amber
   },
   {
     icon: Shield,
@@ -104,6 +111,7 @@ const services = [
       "Security training",
     ],
     technologies: ["OWASP", "Burp Suite", "Metasploit", "Wireshark", "Nessus"],
+    accentColor: "#ef4444", // Red
   },
   {
     icon: Globe,
@@ -117,6 +125,7 @@ const services = [
       "Performance optimization",
     ],
     technologies: ["Next.js", "React", "Vue.js", "WordPress", "Shopify"],
+    accentColor: "#ec4899", // Pink
   },
   {
     icon: Cpu,
@@ -131,6 +140,7 @@ const services = [
       "Edge computing",
     ],
     technologies: ["MQTT", "Arduino", "Raspberry Pi", "Azure IoT", "AWS IoT"],
+    accentColor: "#14b8a6", // Teal
   },
   {
     icon: Zap,
@@ -144,6 +154,7 @@ const services = [
       "Release management",
     ],
     technologies: ["Jenkins", "GitLab CI", "Terraform", "Ansible", "Prometheus"],
+    accentColor: "#eab308", // Yellow
   },
   {
     icon: BarChart,
@@ -157,6 +168,7 @@ const services = [
       "ROI optimization",
     ],
     technologies: ["Agile", "Scrum", "Lean", "Six Sigma", "ITIL"],
+    accentColor: "#a855f7", // Violet
   },
   {
     icon: Lock,
@@ -170,6 +182,7 @@ const services = [
       "Security audits",
     ],
     technologies: ["Ethereum", "Solidity", "Web3.js", "Hyperledger", "Polygon"],
+    accentColor: "#f97316", // Orange
   },
   {
     icon: Layers,
@@ -183,6 +196,7 @@ const services = [
       "Training and support",
     ],
     technologies: ["SAP", "Salesforce", "Microsoft Dynamics", "Oracle", "Odoo"],
+    accentColor: "#6366f1", // Indigo
   },
 ]
 
@@ -207,7 +221,7 @@ export function ServicesPageClient() {
       </motion.section>
 
       {/* Services Grid */}
-      <motion.section
+      {/* <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -227,7 +241,17 @@ export function ServicesPageClient() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
+
+      <section className="relative py-12 pb-32">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard3D key={service.title} {...service} delay={index * 0.05} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <motion.div
@@ -240,3 +264,4 @@ export function ServicesPageClient() {
     </main>
   )
 }
+

@@ -202,7 +202,7 @@ export function HeroSection() {
         {/* <Background3D mouseX={mousePos.x} mouseY={mousePos.y} /> */}
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-20 sm:mt-20 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-5rem)]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20">
             {/* Left Column - Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -272,7 +272,7 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative w-full h-[440px] sm:h-[340px] md:h-[340px] lg:h-[340px] xl:h-[390px]"
+              className="relative w-full h-[500px] sm:h-[400px] md:h-[410px] lg:h-[420px] xl:h-[420px] 2xl:h-[420px]"
             >
               {/* Video Background Container */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
@@ -495,7 +495,7 @@ export function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
@@ -504,7 +504,7 @@ export function HeroSection() {
           <div className="w-6 h-10 border-2 border-cyan-500/50 rounded-full flex justify-center">
             <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
           </div>
-        </motion.div>
+        </motion.div> */}
       </section>
 
       {/* <div className="relative z-10 -mt-10">
