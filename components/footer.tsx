@@ -7,10 +7,10 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, Instagram } f
 
 const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Github, href: "#", label: "GitHub" },
+  // { icon: Twitter, href: "#", label: "Twitter" },
+  // { icon: Github, href: "#", label: "GitHub" },
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  // { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
 export function Footer() {
