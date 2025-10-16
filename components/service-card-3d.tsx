@@ -81,11 +81,11 @@ export function ServiceCard3D({
         onBlur={() => setIsFocused(false)}
         onClick={handleCardClick}
         tabIndex={0}
-        style={{
-          rotateX: isHovered || isFocused ? rotateX : "0deg",
-          rotateY: isHovered || isFocused ? rotateY : "0deg",
-          transformStyle: "preserve-3d",
-        }}
+        // style={{
+        //   rotateX: isHovered || isFocused ? rotateX : "0deg",
+        //   rotateY: isHovered || isFocused ? rotateY : "0deg",
+        //   transformStyle: "preserve-3d",
+        // }}
         className="relative h-full group cursor-pointer outline-none"
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -144,7 +144,7 @@ export function ServiceCard3D({
 
             {/* Title */}
             <motion.h3
-              className="font-bold mb-4 text-foreground transition-all duration-300"
+              className="font-bold mb-4 text-foreground text-white transition-all duration-300"
               animate={{
                 fontSize: isExpanded ? "2rem" : "1.5rem",
                 color: isExpanded ? accentColor : "inherit",
@@ -155,7 +155,7 @@ export function ServiceCard3D({
 
             {/* Description */}
             <motion.p
-              className="text-muted-foreground leading-relaxed mb-6 flex-grow"
+              className="text-muted-foreground text-white leading-relaxed mb-6 flex-grow"
               animate={{
                 fontSize: isExpanded ? "1.125rem" : "1rem",
               }}
@@ -167,7 +167,7 @@ export function ServiceCard3D({
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
-                opacity: isHovered || isFocused || isExpanded ? 8 : 1,
+                opacity: isHovered || isFocused || isExpanded ? 1 : 1,
                 height: isHovered || isFocused || isExpanded ? "auto" : 0,
               }}
               transition={{ duration: 0.3 }}
@@ -176,7 +176,7 @@ export function ServiceCard3D({
               {features && features.length > 0 && (
                 <div className="mb-6">
                   <motion.h4
-                    className="font-semibold mb-3 flex items-center gap-2"
+                    className="font-semibold text-white mb-3 flex items-center gap-2"
                     animate={{
                       fontSize: isExpanded ? "1.125rem" : "0.875rem",
                     }}
@@ -188,7 +188,7 @@ export function ServiceCard3D({
                     {features.map((feature, idx) => (
                       <motion.li
                         key={idx}
-                        className="text-muted-foreground flex items-start gap-2"
+                        className="text-muted-foreground text-white flex items-start gap-2"
                         animate={{
                           fontSize: isExpanded ? "1rem" : "0.875rem",
                         }}
@@ -208,7 +208,7 @@ export function ServiceCard3D({
               {technologies && technologies.length > 0 && (
                 <div>
                   <motion.h4
-                    className="font-semibold mb-3 flex items-center gap-2"
+                    className="font-semibold text-white mb-3 flex items-center gap-2"
                     animate={{
                       fontSize: isExpanded ? "1.125rem" : "0.875rem",
                     }}
@@ -222,7 +222,7 @@ export function ServiceCard3D({
                         key={idx}
                         className="px-3 py-1 rounded-full font-medium border"
                         style={{
-                          backgroundColor: `${accentColor}15`,
+                          backgroundColor: `${accentColor}30`,
                           borderColor: `${accentColor}30`,
                           color: accentColor,
                         }}
