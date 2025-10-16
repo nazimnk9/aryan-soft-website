@@ -78,7 +78,7 @@ export function ServiceCardDetailed({
         </div>
 
         <Link href="/contact" className="block">
-          <AnimatedButton className="w-full" showArrow>
+          <AnimatedButton className="w-full cursor-pointer" showArrow>
             Get Started
           </AnimatedButton>
         </Link>

@@ -256,14 +256,14 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4 sm: pl-4 md:pl-4 lg:pl-4 xl:pl-4 2xl:pl-4"
               >
-                <Link href="#contact">
-                  <AnimatedButton size="lg">Get a Quote</AnimatedButton>
+                <Link href="/contact">
+                  <AnimatedButton size="lg" className="cursor-pointer">Get a Quote</AnimatedButton>
                 </Link>
-                <Link href="#portfolio">
+                {/* <Link href="#portfolio">
                   <AnimatedButton size="lg" variant="outline">
                     See our work
                   </AnimatedButton>
-                </Link>
+                </Link> */}
               </motion.div>
             </motion.div>
 

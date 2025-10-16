@@ -345,7 +345,7 @@ export function ContactForm() {
           {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
         </div>
 
-        <AnimatedButton type="submit" size="lg" className="w-full" disabled={isSubmitting} showArrow>
+        <AnimatedButton type="submit" size="lg" className="w-full cursor-pointer" disabled={isSubmitting} showArrow>
           {isSubmitting ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />

@@ -138,7 +138,7 @@ export function ServicesPreview() {
 
         <div className="flex justify-center mt-12">
           <Link href="/services">
-            <AnimatedButton size="lg" showArrow>
+            <AnimatedButton size="lg" showArrow className="cursor-pointer">
               View All Services
             </AnimatedButton>
           </Link>

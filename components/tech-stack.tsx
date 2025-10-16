@@ -3141,7 +3141,7 @@ export function TechStack() {
             <button
               key={category.id}
               onClick={() => handleCategoryChange(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`cursor-pointer px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category.id
                   ? "bg-cyan-500/20 text-white border border-cyan-500/40 shadow-lg shadow-cyan-500/20 scale-105"
                   : "bg-gray-700/50 text-white/70 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:scale-105"

@@ -37,14 +37,14 @@ export function ScrollToTop() {
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg hover:shadow-xl flex items-center justify-center group"
+          className="cursor-pointer fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg hover:shadow-xl flex items-center justify-center group"
           aria-label="Scroll to top"
         >
           <motion.div
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
           >
-            <ArrowUp className="w-5 h-5" />
+            <ArrowUp className="w-5 h-5 " />
           </motion.div>
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-100 blur-xl transition-opacity" />
         </motion.button>

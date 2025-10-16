@@ -336,7 +336,7 @@ export function PortfolioPreview() {
             className="text-center mt-12"
           >
             <Link href="/portfolio" onClick={handleViewAllProjects}>
-              <AnimatedButton size="lg" showArrow>
+              <AnimatedButton size="lg" showArrow className="cursor-pointer">
                 View All Projects
               </AnimatedButton>
             </Link>

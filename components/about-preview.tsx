@@ -156,7 +156,7 @@ export function AboutPreview() {
           className="text-center mt-16"
         >
           <Link href="/about">
-            <AnimatedButton size="lg" showArrow>
+            <AnimatedButton size="lg" showArrow className="cursor-pointer">
               Learn More About Us
             </AnimatedButton>
           </Link>

@@ -60,7 +60,7 @@ export function CTASection() {
               </Link>
             )} */}
             <Link href="/contact">
-              <AnimatedButton size="lg" showArrow className="px-10 py-10 text-xl sm:text-2xl font-semibold">
+              <AnimatedButton size="lg" showArrow className="px-10 py-10 text-xl sm:text-2xl font-semibold cursor-pointer">
                 Get Started
               </AnimatedButton>
             </Link>

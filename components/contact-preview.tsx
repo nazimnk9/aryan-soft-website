@@ -737,7 +737,7 @@ export function ContactPreview() {
             className="text-center mt-12"
           >
             <Link href="/contact">
-              <AnimatedButton size="lg" showArrow>
+              <AnimatedButton size="lg" showArrow className="cursor-pointer">
                 Contact Us Now
               </AnimatedButton>
             </Link>

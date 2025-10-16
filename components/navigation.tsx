@@ -411,7 +411,7 @@ export function Navigation() {
           {/* Desktop CTA - Show only on xl screens and above */}
           <div className="hidden xl:flex items-center gap-4">
             <Link href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
-              <AnimatedButton showArrow>Get Started</AnimatedButton>
+              <AnimatedButton showArrow className="cursor-pointer">Get Started</AnimatedButton>
             </Link>
           </div>
 
@@ -476,7 +476,7 @@ export function Navigation() {
                     className="pt-3 xs:pt-4 px-3 xs:px-4"
                   >
                     <Link href="/#contact" onClick={(e) => handleNavClick(e, "/#contact")}>
-                      <AnimatedButton className="w-full text-sm xs:text-base" showArrow>
+                      <AnimatedButton className="w-full text-sm xs:text-base cursor-pointer" showArrow>
                         Get Started
                       </AnimatedButton>
                     </Link>
