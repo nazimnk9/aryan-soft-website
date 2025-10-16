@@ -276,16 +276,25 @@ export function HeroSection() {
             >
               {/* Video Background Container */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                {/* <div className="absolute inset-0 z-0">
-                  <iframe
+                <div className="absolute inset-0 z-0">
+                  {/* <iframe
                     src="https://www.pexels.com/download/video/33844964/?autoplay=1&mute=1&loop=1&playlist=FAprM96GiRg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
                     className="w-full h-full object-cover scale-225"
                     allow="autoplay; encrypted-media"
                     style={{ pointerEvents: "none" }}
                     title="Background video"
+                  /> */}
+                  <video
+                    src="/1.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover scale-225"
+                    style={{ pointerEvents: "none" }}
                   />
-                </div> */}
-                <DNAVortex backgroundColor="#000000" particleCount={400} containerClassName="w-full h-full" />
+                </div>
+                {/* <DNAVortex backgroundColor="#000000" particleCount={400} containerClassName="w-full h-full" /> */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/60 via-[#0d1b2a]/50 to-[#1b263b]/60 backdrop-blur-[1px]" />
               </div>
 
