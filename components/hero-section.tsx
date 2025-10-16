@@ -201,8 +201,8 @@ export function HeroSection() {
       <section className="relative flex items-center overflow-hidden">
         {/* <Background3D mouseX={mousePos.x} mouseY={mousePos.y} /> */}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-20 sm:mt-20 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10 mt-0 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-10 sm:py-12 md:py-20 lg:py-20 xl:py-20 2xl:py-20">
             {/* Left Column - Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
