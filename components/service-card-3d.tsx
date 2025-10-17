@@ -850,7 +850,7 @@ export function ServiceCard3D({
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
-      className="perspective-1000 text-white"
+      className="perspective-1000 text-white cursor-pointer"
     >
       <motion.div
         onMouseMove={handleMouseMove}
