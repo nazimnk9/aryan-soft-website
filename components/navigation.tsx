@@ -435,19 +435,19 @@ export function Navigation() {
         {/* Mobile Menu - Show on all screens smaller than xl */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="xl:hidden overflow-hidden mt-3 sm:mt-4"
-            >
-              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
-                <div className="absolute inset-0 backdrop-blur-xl bg-background/80" />
-                <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-primary/30" />
+            // <motion.div
+            //   initial={{ opacity: 0, height: 0 }}
+            //   animate={{ opacity: 1, height: "auto" }}
+            //   exit={{ opacity: 0, height: 0 }}
+            //   transition={{ duration: 0.3 }}
+            //   className="xl:hidden overflow-hidden mt-3 sm:mt-4"
+            // >
+            //   <div className="relative rounded-xl sm:rounded-2xl overflow-hidden">
+            //     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
+            //     <div className="absolute inset-0 backdrop-blur-xl bg-background/80" />
+            //     <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-primary/30" />
 
-                <div className="relative py-4 xs:py-5 sm:py-6 px-3 xs:px-4 sm:px-6 space-y-2 xs:space-y-3 sm:space-y-4">
+                <div className="relative rounded-2xl overflow-hidden py-6 px-4 space-y-4 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 absolute inset-0 backdrop-blur-xl bg-background/80 absolute inset-0 rounded-2xl border-2 border-primary/30">
                   {navLinks.map((link, index) => (
                     <motion.div
                       key={link.href}
@@ -482,8 +482,8 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 </div>
-              </div>
-            </motion.div>
+            //   </div>
+            // </motion.div>
           )}
         </AnimatePresence>
       </nav>
